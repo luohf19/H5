@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section {
+            width: 450px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background: url("1.jpg");
+            position: relative;            /*  子绝父相*/
+            perspective: 1000px;  /* 给父盒子加透视效果*/
+        }
+        .door-l,.door-r {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            border: 1px solid #000;
+          /*  background-color: pink;*/
+            background: url("bg.png");
+            position: absolute;       /*子绝父相的   子绝*/
+            transition: all 0.8s;      /*过渡效果*/
+        }
+        .door-l {
+            left: 0;
+            border-right: 1px solid #000;
+            transform-origin: left;        /*旋转定位   左*/
+        }
+        .door-r {
+            right: 0;
+            border-left: 1px solid #000;
+            transform-origin: right;       /* 旋转定方位  右*/
+        }
+        .door-l::before {            /*  添加门把手两个小圆   用伪类选择器*/
+            content: "";
+            position: absolute;        /* 定位用绝对定位*/
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            right: 5px;
+            top: 50%;
+            border-radius: 50%; /* 圆角*/
+            transform: translateY(-50%);
+        }
+        .door-r::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            left: 5px;
+            top: 50%;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        section:hover .door-l{
+            transform: rotateY(-130deg);           /* 鼠标经过旋转度数*/
+        }
+        section:hover .door-r{
+            transform: rotateY(130deg);
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="door-l"></div>
+    <div class="door-r"></div>
+</section>
+</body>
+</html>

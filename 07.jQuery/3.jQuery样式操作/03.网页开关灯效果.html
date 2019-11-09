@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls {
+            background-color: black;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 页面加载完成后  点击按钮实现开关灯效果
+        $(function () {
+           /* // 方法一
+            $('#btn').click(function () {
+                // 先判断body是否应用了某个类样式，如果应用了就移除，如果没有应用，就让body应用这个类样式
+                if ($('body').hasClass('cls')){
+                    // 应用了--移除该类样式
+                    $('body').removeClass('cls');
+                    $(this).val('关灯');
+                } else {
+                    // 没有应用--让body添加这个类样式
+                    $('body').addClass('cls');
+                    $(this).val('开灯');
+                }
+            });*/
+
+            // 方法二
+            $('#btn').click(function () {
+                //toggleClass()方法   就是切换类样式  如果有 移除  如果没有添加
+                $('body').toggleClass('cls');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="开关灯" id="btn">
+</body>
+</html>

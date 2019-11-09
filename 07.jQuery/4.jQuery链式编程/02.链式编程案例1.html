@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        //获取列表中的每个li，当鼠标进入后，当前的li高亮显示，点击的时候让当前的li字体变大，字体颜色改变，改变字体
+        $(function () {
+            $('#uu>li').mouseover(function () {
+                $(this).css('backgroundColor','pink').siblings('li').css('backgroundColor','');
+            }).click(function () {
+                $(this).css('fontSize','30px').css('fontFamily','微软雅黑').css('color','red');
+            });;
+        });
+
+
+    </script>
+</head>
+<body>
+<ul id="uu">
+    <li>春眠不觉晓</li>
+    <li>处处闻啼鸟</li>
+    <li>夜来风雨声</li>
+    <li>花落知多少</li>
+</ul>
+</body>
+</html>

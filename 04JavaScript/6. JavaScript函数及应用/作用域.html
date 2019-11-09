@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 全局变量   在任何位置都可以访问
+        var num = 5;
+        function fn() {
+            str = 'abc';   //全局变量   没有用var来赋值的  且内部外部各调用一次   都有输出
+            console.log(num);
+            console.log(str)
+        }
+        fn();
+        console.log(str);
+
+        //局部变量    有在定义该变量的函数中可以访问
+        function fn() {
+            var num = 5;   //  这就是局部变量
+        }
+        console.log(num);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

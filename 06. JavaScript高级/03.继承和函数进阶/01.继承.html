@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var wjl ={
+        name: '王健林',
+        money:1000000000,
+        houses:['别墅', '海景房'],
+        cars:['玛莎拉蒂', '特斯拉'],
+        play: function () {
+            console.log('打高尔夫');
+        }
+    }
+    var wsc ={
+        name: '王思聪'
+    }
+/*for(var key in wjl) {
+    //  不给王思聪复制同名的属性
+    if (wsc[key]) {
+        continue;
+    }
+    wsc[key] = wjl[key];
+}
+console.dir(wsc);*/
+
+// extend   扩展的意思
+function extend(parent, child) {
+    for(var key in parent) {
+        // 不给复制同名属性
+        if (child[key]) {
+            continue;
+        }
+        child[key] = parent[key]
+    }
+}
+    extend(wjl, wsc);
+    console.dir(wsc);
+</script>
+</body>
+</html>

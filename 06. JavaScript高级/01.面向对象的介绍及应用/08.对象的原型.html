@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+       /* this.sayHi = function () {       这个是 对象本身的一个方法
+            console.log('大家好，我是' + this.name);*/
+    }
+    Student.prototype.sayHi = function () {    // 这是原型中的一个方法
+        console.log('大家好，我是' + this.name);
+    }
+    var s1 = new Student('李磊', 18, '男');
+    var s2 = new Student('郭美美', 18, '女');
+    s1.sayHi();
+    s2.sayHi();
+    console.dir(s1);
+    // 当调用对象的属性或方法的时候，先去找对象本身的属性和方法
+    // 如果对象本身没有该属性或者方法，此时去调用原型中的属性和方法
+    // 如果对象本身和原型中都没有该属性和方法，此时会报错
+    // s1__proto__  对象的__proto__ 就等于构造函数的Sturend.prototype
+    // __proto__是非标准的属性
+
+    console.log(s1.__proto__ === Student.prototype);  // 返回结果是true
+    console.dir(s1.__proto__ );
+    console.dir(Student.prototype);  //
+
+    // 在原型对象中 有一个属性 constructor   构造函数
+    // constructor  作用记录了创建该对象的构造函数
+    console.dir(s1.constructor);   // 返回的是构建函数里面的内容
+
+</script>
+</body>
+</html>

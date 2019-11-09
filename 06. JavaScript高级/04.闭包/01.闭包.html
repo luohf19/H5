@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        // 闭包就是在一个作用域中可以访问另一个作用域的变量。
+        // 闭包的特点：延展了函数的作用域范围
+    function fn() {
+        var n = 10;
+        return function () {
+            return n;
+        }
+    }
+    var f = fn();
+    console.log(f());
+</script>
+</body>
+</html>

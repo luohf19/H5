@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div>1123</div>
+</div>
+<script>
+    // 在内存中创建DOM对象
+    var p = document.createElement('p');
+    // 设置对象的性能
+    p.innerText = 'hello';
+    p.style.color = 'red';
+    // 把p元素  放到DOM树上
+    var box = document.getElementById('box');
+    box.appendChild(p);   //append   是追加的意思  一般追加在最后一个元素的后面
+</script>
+</body>
+</html>

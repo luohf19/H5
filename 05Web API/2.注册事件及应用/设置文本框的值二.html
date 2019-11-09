@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input id='btn' type="button" value="获取文本框的值"><br>
+<script>
+    // 1.当页面加载完毕，给所有的文本框赋值
+    var inputs = document.getElementsByTagName('input');  //获取所有input标签
+    for (var i = 0; i < inputs.length; i++ ){
+        var input = inputs[i];
+        if(input.type === 'text') {   // 根据type属性，判断是否是文本框
+            input.value = i;
+        }
+    }
+    // 2.当点击按钮的时候，获取所有文本框的值，并使用|分隔输出
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {    // 给按钮注册点击事件
+        var array = [];
+        for (var i = 0; i < inputs.length; i++){
+            var input = inputs[i];
+            // 判断是否是文本框
+            if (input.type === 'text') {
+               array.push(input.value);    // 少量字符串拼接，速度还是很快的  如果大量字符串拼接，会有性能问题，
+            }                                  // 大量字符串拼接  我们也可以用数组  速度就会快很多
+        }
+        console.log(array.join('|'));  // join是把数组转换成字符串，默认情况下是用逗号进行分隔每一项
+    }
+</script>
+</body>
+</html>

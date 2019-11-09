@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>first</h1>
+<a href="second.html">second</a>
+<input type="button" value="前进" id="btn2">
+<script>
+    var btn2 = document.getElementById('btn2');
+    btn2.onclick = function () {
+        // history  历史  是window的属性
+       // history.forward();  //forward() 前进
+        history.go(1);
+    }
+</script>
+</body>
+</html>

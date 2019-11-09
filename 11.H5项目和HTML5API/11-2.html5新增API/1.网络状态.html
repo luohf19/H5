@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            width: 200px;
+            height: 40px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 40px;
+            margin: 100px auto;
+            color: #FFFFFF;
+            font-size: 24px;
+            background-color: #000000;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<p class="tips"></p>
+<script src="../11-1.QQ浏览器/js/jquery.min.js"></script>
+<script>
+    <!--通过window.navigator.onLine 来检测网络是否可用-->
+    // alert(window.navigator.onLine);
+    // 当网络链接到的时候，弹出p 显示网络已经连接  然后消失
+    window.addEventListener('online', function () {
+        $(".tips").text("网络已经连接").fadeIn(500).delay(1000).fadeOut();
+    })
+    // 当网络断开的时候，弹出p 显示网络断开  然后消失
+    window.addEventListener('offline', function () {
+        $(".tips").text("网络断开连接").fadeIn(500).delay(1000).fadeOut();
+    })
+
+</script>
+
+
+</body>
+</html>

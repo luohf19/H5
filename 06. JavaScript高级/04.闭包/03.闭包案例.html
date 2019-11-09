@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="heroes">
+    <li>安其拉</li>
+    <li>诸葛亮</li>
+    <li>狄仁杰</li>
+    <li>曹操</li>
+</ul>
+<script>
+            // 点击li的时候输出当前li对应的索引
+          // 方式一
+    // 1.给li注册点击事件
+    var heroes = document.getElementById('heroes');
+    var list = heroes.children;
+    for (var i = 0; i < list.length; i++) {
+        var li = list[i];
+        li.index = i;
+        li.onclick = function () {
+            // 2.点击li的时候输出当前li对应的索引
+            console.log(this.index);
+
+    }
+
+            // 方式二   闭包
+        var heroes = document.getElementById('heroes');
+        var list = heroes.children;
+        for (var i = 0; i < list.length; i++) {
+            var li = list[i];
+            ( function(i){
+                li.onclick = function () {
+                    // 2.点击li的时候输出当前li对应的索引
+                    console.log(i);
+                }
+            })(i);
+        }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/*公共样式*/
+
+/*1.样式重置*/
+html,body,div,ul,li,p,a,img，form,input {
+    padding: 0;
+    margin: 0;
+    /*设置盒模型*/
+    box-sizing: border-box;
+    /*去除移动端特有的点击高亮效果*/
+    -webkit-tap-highlight-color: transparent; /*透明色*/
+
+}
+body {
+    font-family: "微软雅黑";
+    font-size: 13px;
+}
+a
+a:hover {  /*鼠标上移后  颜色也是不变的*/
+  color: #666666;  /*颜色为灰色*/
+    text-decoration: none;/*取消下划线  */
+}
+ul {
+    list-style: none;  /*列表属性*/
+}
+input {
+  /*1-1.清除文本框获取焦点时默认的边框阴影*/
+    outline: none;
+    /*1.2去除边框*/
+    border: none;
+    /*1.3添加边框*/
+    border:1px solid #cccccc;
+}
+
+/*2.添加新样式*/
+.f—left {
+       float: left;  /*左浮动*/
+   }
+.f—right {
+    float: right;  /*右浮动*/
+}
+.m—left10 {
+    margin-left: 10px;
+}
+.m—right10 {
+    margin-right: 10px;
+}
+.m—top10 {
+     margin-top: 10px;
+ }
+ /*清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+

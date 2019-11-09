@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            width: 600px;
+            height: 600px;
+            background-color: red;
+        }
+        #box2 {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3">
+        </div>
+    </div>
+</div>
+<script>
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2');
+    var box3 = document.getElementById('box3');
+    var array = [box1, box2, box3];
+    for (var i = 0; i < array.length; i++){
+        var box = array[i];
+        box.onclick = function (e) {
+            e = e || window.event;
+            // 事件的阶段
+            console.log(e.eventPhase);
+            // e.target获取真正触发事件的对象
+            var target = e.target || e.srcElement
+            console.log(target);
+            // e.currentTarget和this一样  获取事件处理函数所属的对象
+            console.log(e.currentTarget);
+            console.log(this);
+
+
+        }
+    }
+
+</script>
+
+</body>
+</html>

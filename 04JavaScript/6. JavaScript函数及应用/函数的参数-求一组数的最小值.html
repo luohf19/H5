@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //求一组数的最小值
+        function getMin(arr){
+            var min = arr[0];
+            for(var i = 1; i < arr.length; i++){
+                if(min > arr[i]){
+                    var min = arr[i];
+                }
+            }
+            return min;
+        }
+        var array = [89,75,23,5,14,98,2,69];
+        var min = getMin(array);
+        console.log(min);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮1把所有表单的value属性值全部显示出来
+        // 点击按钮2设置表单按钮的value属性值
+        // 点击按钮3让下拉框中的南京选中
+        $(function () {
+            $('#btn').click(function () {
+                console.log($(this).val());
+                console.log($('#txt').val());
+                console.log($('#rad').val());
+                console.log($('#ck').val());
+                console.log($('#sm').val());
+                // 获取文本域中内容有两种方法1.val()-->推荐  2.text()
+                // console.log($('#ta').val());
+                console.log($('#ta').text());
+            });
+            $("#btn1").click(function () {
+                $(this).val('这是一个可爱的小按钮');
+                $('#txt').val('你是文本框吗');
+                $('#rad').val('我是一个单选框');
+                $('#ck').val('我很厉害 ，可以多选');
+                $('#sm').val('我是一个小按钮妞');
+                $('#ta').val('春天什么时候来呢？');
+            });
+            $('#btn2').click(function () {
+                $('#se').val(3);  // val(3)；改变下拉框 使某一项选中
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+<input type="button" value="改变属性值" id="btn1">
+<input type="button" value="选择下拉框" id="btn2">
+
+
+<input type="text" value="文本框" id="txt">
+<input type="radio" value="nan" id="rad">男
+<input type="checkbox" value="1" id="ck">吃饭
+<input type="submit" value="提交" id="sm">
+<textarea name="" id="ta" cols="30" rows="10">
+     今天终于晴了  不下雨了
+</textarea>
+<select id="se">
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+    <option value="3">南京</option>
+    <option value="4">成都</option>
+    <option value="5">西安</option>
+</select>
+</body>
+</html>

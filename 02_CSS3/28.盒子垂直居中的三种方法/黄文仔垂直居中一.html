@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*先让盒子的上下边缘与父盒子的水平中心线重叠，然后再让子盒子往回移自身的一半距离*/
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            position: relative;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+            position: absolute;
+            margin-top: 150px;
+            top: -101px;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+     /*   //数组   就是一种数据类型    数组可以存储很多项，有顺序，很多项形成一个集合，这个集合就是数组  Array
+        //数组的字面量[]
+        var names = ['zs','ls','ww','lhf'];
+        //如何获取数组中的数据  我们可以通过索引，数组中的第一项的索引是从0开始的
+        console.log(names[0]);
+        console.log(names[1]);
+        console.log(names[2]);*/
+
+  /*   var names = ['zs','ls',18,19,true]
+        console.log(names);
+     console.log(names.length);
+    // 获取数组中的最后一个元素   如果数组中有29项，最后一项的索引就是   数组的长度-1
+        console.log(names[names.length-1]);
+
+
+     //数组的长度可以动态改变
+     var names = ['zs','ls','ww','lhf'];
+     //如何修改数组中的元素
+     names[0] = 'abc';
+     console.log(names);    //此时再输出   我们的第一项元素就变成了“abc”
+
+     //给数组新增一项
+     names[5] = 'abc';
+     //我们本只有四项，0、1、2、3，现在我们赋值了5，相当于添加了新的一项
+     /而且中间没有4元素，但我们获取数组长度就变成了6，而地4元素的结果是Undefined
+*/
+
+     //获取数组中的每一项并打印（遍历数组）
+  /*   var names = ['zs','ls',18,19,true];
+     for(var i = 0; i < names.length; i++){
+         console.log(names[i]);
+     }
+*/
+     //（遍历数组） 先打印最后一项
+   /*  var names = ['zs','ls',18,19,true];
+     for(var i = names.length-1; i >= 0; i--){
+         console.log(names[i]);
+     }
+*/
+    //补充数组
+    var scores = [];
+    for(var i = 0;i < 10; i++){
+       scores[i] = i;
+    }
+     console.log(scores);
+
+    //清空数组
+        scores.length = 0;
+        console.log(scores);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

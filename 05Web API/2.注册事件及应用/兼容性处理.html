@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">123</div>
+    <script>
+        // 如何知道浏览器是否支持元素的某个属性
+        var box = document.getElementById('box');
+        // 当属性不存在的时候  返回的是undefined
+        console.log(typeof box.a);
+        // 当属性存在的时候  返回的是该属性的类型
+        console.log(typeof box.id);
+        //处理innerText的兼容性问题
+        function getInnerText(element){
+             // 判断当前浏览器是否支持元素的innerText属性，支持innerText,使用element.innerText获取内容
+            // 如果不支持innerText属性，使用element.textContent获取内容
+            if (typeof element.innerText === 'string'){
+                return element.innertext;
+            }
+        }
+        box.innerHTML = 'hello world';
+        // 设置内容的时候
+        // innerText(textContrnt)    当设置不含标签的内容的时候应该使用
+        // innerHTML    当设置有标签的时候使用
+    </script>
+</body>
+</html>

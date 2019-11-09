@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  va如何创建数组对象
+        // 1.数组字面量[]
+        var arr = []; // 空数组
+        var numbers = [1, 5, 6];
+
+        // 2.数组的构造函数Array
+        var array = new Array();  // 空数组
+        var array = new Array(4, 6, 9);
+        console.log(numbers);
+
+        //获取数组长度
+        console.log(numbers.length);
+
+
+
+        // 如何判断一个变量是否是数组对象
+        // instanceof  前面是一个变量，后面是一个构造函数，可以判断面前这个变量是不是构造函数的一个实例，是不是new这个构造函数
+        // 创建的一个对象
+        // 方法一
+        function fn(arr){
+            if(!(arr instanceof Array)){  // 这句话的意思是  如果arr不是数组对象  取反
+                console.error('参数err 不是数组对象');
+                return;
+            }
+            console.log('正常执行');             // 如果是数组对象就正常执行
+        }
+        var d = [];
+        fn(d);
+
+
+        // 如何判断一个变量是否是数组对象        方法一
+        function fn(arr) {
+            if (!Array.isArray(arr)) {        // 会返回一个true或false
+                console.error('参数err 不是数组对象');
+                return;
+            }
+            console.log('正常执行');
+        }
+        var d = [];
+        fn(d);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

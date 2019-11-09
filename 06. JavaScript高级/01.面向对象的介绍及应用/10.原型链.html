@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    Student.prototype.sayHi = function () {    // 这是原型中的一个方法
+        console.log('大家好，我是' + this.name);
+    }
+    var s1 = new Student('李磊', 18, '男');
+    var s2 = new Student('郭美美', 18, '女');
+
+    s1.sayHi();
+    s2.sayHi();
+    console.log(s1.sayHi === s2.sayHi);
+
+
+</script>
+</body>
+</html>

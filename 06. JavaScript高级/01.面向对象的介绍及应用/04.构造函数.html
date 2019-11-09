@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* // .工厂函数  创建多个对象
+    function createHero(name, blood, weapon) {
+        var o = new Object();
+        o.name = name;
+        o.blood = blood;
+        o.weapon = weapon;
+        o.attack = function () {
+            console.log(this.weapon + '攻击敌人');
+        }
+        return o;
+    }
+    var hero1 = createHero('刘备', 100, '剑');
+    var hero2 = createHero('张飞', 100, '刀');*/
+
+    // 构造函数   第一个字母就要大写
+    function Hero(name, blood, weapon) {
+        this.name = name;
+        this.blood = blood;
+        this.weapon = weapon;
+        this.attack = function () {
+            console.log(this.weapon + '攻击敌人');
+        }
+    }
+   // 当我们调用new Hero 的时候  做了四件事情
+   // 1.会在内存中创建一个空对象
+   // 2.设置构造函数的this, 让this指向刚刚创建的对象
+   // 3. 执行构造函数中的代码
+   // 4.返回对象
+    var hero = new Hero('刘备', 100, '剑');
+    hero.attack();
+    // 我们无法使用typeof获取对象的具体属性
+    // console.log(typeof hero);
+
+    // 获取对象的具体属性   不建议使用
+    // constructor  建造者
+    console.log(hero.constructor === Hero);
+    // 判断hero 是不是Hero中的对象
+
+    // instanceof   判断某个对象是否是某个构造函数的实例/对象
+    console.log(hero instanceof Hero);   // 返回结果是true
+
+
+
+</script>
+</body>
+</html>

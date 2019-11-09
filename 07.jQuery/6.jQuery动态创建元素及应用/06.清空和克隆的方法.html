@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 150px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮1，清空div中的内容
+        // 点击按钮2，复制span中的内容，并添加到第二个div中
+        $(function () {
+            $('#btn1').click(function () {
+                // $('#dv1').html('');   // html('')  清空元素中的内容(括号中要加引号)
+                // $('#dv1').empty();       // empty()  清空元素中的内容
+                $('#dv1').remove();         // remove();  移除元素自身 -- 自杀
+            });
+            $('#btn2').click(function () {
+               var obj = $('#dv1>span').clone();
+               $('#dv2').append(obj);
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果1" id="btn1">
+<input type="button" value="显示效果2" id="btn2">
+    <div id="dv1">
+        <span>我最喜欢的季节是春天，感觉一切都是那么的舒服</span>
+    </div>
+    <div id="dv2"></div>
+</body>
+</html>

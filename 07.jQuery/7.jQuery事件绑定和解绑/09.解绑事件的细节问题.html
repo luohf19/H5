@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            // 为div和p标签都绑定点击事件
+            $('#dv>p').click(function () {
+                alert('p标签被点了')
+            });
+            $('#dv').click(function () {
+                alert('div被点了')
+            })
+            $('#btn2').click(function () {
+               //  $('#dv').off('click');  // div解绑了  p标签没解绑
+                // 父级元素和子集元素都是通过正常的方式绑定事件，如果通过off解绑的时候，父级元素解绑了，子集元素没有解绑
+                // 但是如果自己元素是通过父级元素调用delegate的方法来绑定事件，父级元素用off解绑，此时父级元素和子集元素同样的事件都会被解绑
+                // $('#dv').off('click','**');  // 把子集元素的事件解绑，父级元素的点击事件还在
+                $('#dv').off(); //移除父级元素和子集元素的所有的事情
+            })
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="绑定事件" id="btn1">
+<input type="button" value="解绑事件" id="btn2">
+<div id="dv">
+    <p>我是一个p标签</p>
+</div>
+</body>
+</html>

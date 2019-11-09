@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮改变按钮的value值，鼠标进入到按钮中，按钮的宽度高度改变，鼠标离开的时候 按钮的背景颜色变为绿色
+
+        $(function () {
+            $('#btn').click(function () {
+                $(this).val('效果显示');
+            }).mouseover(function () {
+                $(this).css('width','150px').css('height','130px');
+            }).mouseout(function () {
+                $(this).css('backgroundColor','pink');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="链式编程" id="btn">
+</body>
+</html>

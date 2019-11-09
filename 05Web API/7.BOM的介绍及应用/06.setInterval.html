@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="开始" id="btn1">
+<input type="button" value="取消" id="btn2">
+
+<script>
+    //setInterval（）   闹钟    隔一段时间执行一次
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function () {
+        setInterval(function () {
+            console.log('早上八点响一次');
+        }, 3000);
+    }
+</script>
+</body>
+</html>

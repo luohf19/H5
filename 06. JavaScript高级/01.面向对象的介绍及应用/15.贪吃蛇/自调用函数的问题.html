@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 当我们写多个自调用函数的时候  一定要在自调用函数的前面加一个分号
+    ;(function () {
+        console.log(1);
+    })()
+
+    ;(function () {
+        console.log(2);
+    })()
+</script>
+</body>
+</html>

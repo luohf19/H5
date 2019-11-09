@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 4.自定义构造函数
+
+        //new Hero();  创建了一个对象
+        // 命名：第一个单词的第一个字母大写，后续的每一个单词的第一个字母都大写
+        function Hero(name, weapon, equipment, blood){
+            // this  动态的给对象添加了成员  成员就包括属性和方法
+            // 这个构造函数里面就有一个this   this  就指向了当前对象
+            this.name = name;        // this就指向new Hero() 的时候创建的那个对象  我们给它增加了一个属性
+            // 我们给当前new Hero() 的时候创建的一个对象增加了一个name属性，并且让这个属性的值就等于Hero这个构造函数的参数的
+             // name传过来的值    这是增加相应的属性
+            this.weapon = weapon;
+            this.equipment = equipment;
+            this.blood = blood;
+            // 我们还可以增加相应的方法
+            this.attack =function () {
+                console.log(this.name + '：攻击');
+            }
+            this.run = function () {
+                console.log(this.name + '：加速跑')
+            }
+        }
+
+        var hero1 = new Hero('黄忠', '弓箭', ['头盔', '靴子'], 100);
+        var hero2 = new Hero('刘备', '剑', ['头盔', '盔甲'], 100);
+
+            console.log(hero1);
+            console.log(hero2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <span>span</span>
+    <p>p标签</p>
+    <!--这里是注释-->
+</div>
+    <script>
+        //   节点的层次结构
+        // 父节点  只有一个 parentNode
+        // 子节点   可以有很多个  childNodes
+        var box = document.getElementById('box');
+        console.log(box.childNodes);
+
+        //节点的类型  属性节点  元素节点   注释节点   文本节点:空格和换行
+        for(var i = 0; i < box.childNodes.length; i++){
+            // 找到box中的所有子元素
+            var node = box.childNodes[i];   // node   节点
+            // 判断当前元素的子节点是否是元素节点
+            if(node.nodeType === 1){
+                console.log(node);
+            }
+        }
+        // 获取子元素的方法
+        var box = document.getElementById('box');
+        console.log(box.children);
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #box {
+            position: relative;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="动画600" >
+<div id="box"></div>
+<script>
+     // 1.点击按钮  让盒子能够向右移动
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+     var timerId = null;
+    btn.onclick = function () {
+        // 获取盒子当前 位置   offsetLeft    offsetTop
+        // box.style.left = box.offsetLeft + 10 + 'px';
+        // 通过判断  保证页面只有一个定时器
+        if(timerId){
+            clearInterval(timerId);  // 清除定时器
+            timerId = null;
+        }
+
+    // 2.让盒子不停的向右移动
+        timerId = setInterval(function () {
+
+        // 让盒子停在500的位置
+        // 判断盒子当前的位置是否到达
+        // 最终盒子停止的位置
+        var target = 500;
+        // 步进
+        var step = 6;
+        if (box.offsetLeft >= target){
+            // 停止定时器
+            clearInterval(timerId);
+            // 设置横坐标为500
+            box.style.left = target + 'px';
+            console.log(box.style.left);
+            // 退出函数
+            return;
+        }
+        box.style.left = box.offsetLeft + step + 'px';
+     }, 30);
+    }
+</script>
+</body>
+</html>

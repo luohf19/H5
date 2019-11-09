@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 给数组的原型对象新增方法
+    var array = [5, 4, 3, 2, 9];
+    Array.prototype.getSum = function () {
+        // 求数组中偶数的和
+        var sum = 0;
+        for(var i = 0; i < this.length; i++){
+            if(this[i] % 2 === 0){
+                sum += this[i];
+            }
+        }
+        return sum;
+    }
+    console.log(array.getSum());
+
+        //  下面这个方法是错误的
+    // 数组或者string中的prototype是不可以修改的
+    Array.prototype ={
+        getSum: function () {
+            // 求数组中偶数的和
+            var sum = 0;
+            for(var i = 0; i < this.length; i++){
+                if(this[i] % 2 === 0){
+                    sum += this[i];
+                }
+            }
+            return sum;
+
+        }
+    }
+    console.log(array.getSum());  // 打印结果时就报错了
+
+
+</script>
+</body>
+</html>

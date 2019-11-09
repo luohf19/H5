@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            // 点击第一个按钮  用bind绑定事件
+            $('#btn1').bind('click',function () {
+                alert('肚子好饿呀');
+            })
+            // 点击第二个按钮， unbind解除绑定
+            // .unbind（）;方法解除绑定  里面的参数是要解除绑定的事件名称
+            $('#btn2').bind('click',function () {
+                $('#btn1').unbind('click');
+            })
+        });
+    </script>
+
+</head>
+<body>
+<input type="button" value="绑定事件" id="btn1">
+<input type="button" value="解绑事件" id="btn2">
+
+</body>
+</html>

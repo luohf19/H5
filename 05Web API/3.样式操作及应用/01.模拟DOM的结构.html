@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">hello</div>
+<p id="p">world</p>
+<script>
+    // 获取对象没有的属性   那么这个属性的值就是undefind
+    function Node (options) {
+        // 设置属性的默认值
+        this.className = options.className || '';
+        this.id = options.id || '';
+        // 布尔类型的运算符  如果一边的结果是true就返回true  如果两边同时为false就返回false
+        // 两边也可以是其它类型，会先转换成布尔类型
+        // 如果第一个  运算数  转换成布尔类型 是true,直接返回这个运算数
+        // 乳沟第一个  运算数  转换成布尔类型 是flase，返回第二个运算数
+
+        // 节点的名称   如果是元素节点的话  是标签的名称
+        this.nodeName = options.nodeName || '';
+        // 节点的类型  (如果是元素节点  是1；如果说属性节点 是2；如果是文本节点 是3   这个可以自己定义)
+        this.nodeType = options.nodeType || 1;
+        // 记录节点的值  如果是元素节点  始终是null
+        this.nodeValue = options.nodeValue;
+        // 记录子节点
+        this.children = options.children || [];
+    }
+    // 创建HTML节点
+    var html = new Node({
+        nodeName: 'html'
+    });
+    // 创建html中的子节点head
+    var head = new Node({
+       nodeName: 'head'
+    });
+    html.children.push(head);
+    // 创建html中的子节点body
+    var body = new Node({
+       nodeName: 'body'
+    });
+    html.children.push(body);
+   // console.dir(html);
+      //div
+    var div = new Node({
+        nodeName: 'div'
+    });
+    // p
+    var p = new Node({
+        nodeName: 'p'
+    });
+    // 设置body的子节点
+    body.children.push(div);
+    body.children.push(p);
+    console.dir(html);
+
+    // 了解节点相关的属性   nodeName  nodeType  nodeValue
+    // 了解节点的层次结构
+    // 深刻理解DOM
+</script>
+</body>
+</html>

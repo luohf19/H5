@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //call 的应用
+    // getElementsByTagName()
+    // 伪数组
+    var obj = {
+        0: 100,
+        1: 99,
+        2: 60,
+        3: 79,
+        length: 4
+    };
+    // obj['4'] = 30;
+    // obj.length ++;
+    // console.dir(obj);  这样就给数组新添了一项  但是太麻烦
+    Array.prototype.push.call(obj, 30);   // 给伪数组最后面添加一项
+    Array.prototype.splice.call(obj, 0, 3); // 删除位数组中的前三项  打印结果就变成了0: 79  1: 30   length: 2
+    console.dir(obj);
+
+</script>
+</body>
+</html>

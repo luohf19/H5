@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .nav {
+            width: 100%;
+            height: 30px;
+            border: 1px solid green;
+            background-color: green;
+        }
+        #register{
+            text-align: center;
+            font-size: 14px;
+            text-decoration: none;
+            line-height: 30px;
+        }
+        .d-box {
+         width: 400px;
+            height: 300px;
+            border: 5px solid #eeeeee;
+            box-shadow: 2px 2px 2px 2px #666;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            background-color: white;
+            /*不让文字被选中*/
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .hd {
+          width: 100%;
+          height: 25px;
+          background-color: #7c9299;
+          border-bottom: 1px solid #369;
+          line-height: 25px;
+          color: white;
+          cursor: move;
+      }
+         #box_class {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="javascript:;" id="register">注册信息</a>
+</div>
+<div class='d-box' id="d_box">
+    <div class='hd' id="drop">注册信息（可以拖拽）
+        <span id="box_close">【关闭】</span>
+    </div>
+    <div class="bd"></div>
+</div>
+<script src="../common.js"></script>
+<script>
+    var box = document.getElementById('d_box');
+    var drop = document.getElementById('drop');
+    drop.onmousedown = function (e) {
+        e = e || window.event;  // 处理浏览器兼容性问题
+        // 当鼠标按下的时候  求鼠标在盒子中的位置
+        // 鼠标在盒子中的位置 = 鼠标在页面中的位置 - 盒子的位置
+        var x = getPage(e).pageX - box.offsetLeft;
+        var y = getPage(e).pageY- box.offsetTop;
+        // 鼠标在文档上移动
+        document.onmousemove = function (e) {
+            e = e || window.event;  // 处理浏览器兼容性问题
+            // 当鼠标在页面上移动的时候，求盒子的坐标
+            // 盒子的坐标 = 鼠标当前在页面的位置 - 鼠标在盒子中的位置
+            var boxX = getPage(e).pageX - x;
+            var boxY = getPage(e).pageY - y;
+            box.style.left = boxX + 'px';
+            box.style.top = boxY + 'px';
+        }
+    }
+    // 当鼠标弹起的时候，移除鼠标移动事件
+    document.onmouseup = function () {
+        document.onmousemove = null;
+    } 
+    // 点击关闭按钮  隐藏盒子
+    var box_close = document.getElementById('box_close');
+    box_close.onclick =function () {
+        box.style.display = 'none';
+    }
+
+</script>
+</body>
+</html>

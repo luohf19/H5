@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮获取元素的left和top，重新设置元素的left和top
+        $(function () {
+            $('#btn').click(function () {
+                // 获取left和top的值 --> 获取的都是数字类型
+                console.log($('#dv').offset().left);
+                console.log($('#dv').offset().top);
+                // 更改left和top的值
+                $('#dv').offset({'left':200,'top':200});
+            });
+        });
+
+
+    </script>
+
+</head>
+<body>
+<input type="button" value="效果展示" id="btn">
+<div id="dv"></div>
+</body>
+</html>

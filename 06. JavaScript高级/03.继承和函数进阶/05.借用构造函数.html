@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //   借用构造函数
+    //  只能继承对象   不能继承方法
+    // 父类型
+    function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    // 子类型
+    function Student(name, age, sex, score) {
+        Person.call(this, name, age, sex);  // 最重要的一步
+        this.score = score;
+    }
+    var s1 = new Student('zs', 18, '男', 99);
+    console.log(s1);
+</script>
+</body>
+</html>

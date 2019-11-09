@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section {
+            width: 1000px;
+            height: 600px;
+            border: 2px solid pink;
+            margin: 100px auto;
+            display: flex;
+           flex-direction: row;
+            flex-wrap: wrap;  /* 这两句话必须有，否则下面的就会不起效果  也可以简写成下面的格式*/
+         /*   flex-flow: row wrap;*/
+          /*  align-content: space-between;*/
+            align-content: space-around;
+        }
+        div {
+            width: 250px;
+            height: 200px;
+        }
+        div:first-child {
+            background-color: pink;
+        }
+        div:nth-child(2) {
+            background-color: purple;
+        }
+        div:nth-child(3) {
+            background-color: yellow;
+        }
+        div:nth-child(4) {
+            background-color: orange;
+        }
+        div:nth-child(5) {
+            background-color: skyblue;
+        }
+        div:nth-child(6) {
+            background-color: red;
+        }
+        div:last-child {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+</body>
+</html>

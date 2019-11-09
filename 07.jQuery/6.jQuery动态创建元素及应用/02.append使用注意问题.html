@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            // 点击按钮  把第一个div中的元素添加到第二个div中
+            $('#btn').click(function () {
+                // append();方法可以把页面中的元素添加到其他标签中，添加的方法属于移动
+                $('#dv2').append($('#dv1>p'))
+            });
+        });
+        
+        
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="dv1">
+    <p>我是一个p标签</p>
+</div>
+<div id="dv2"></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //求阶乘     也就是5*3*2*1
+        function getJieCheng(n){
+            var result = 1;  //我们给乘的的结果用result来记录  因为这里是累乘  赋值不能是0，0因为0*任何数都是零，
+            for (var i = 1;i <= n; i++) {
+                result=result*i;
+            }
+            return result;
+        }
+        var num =getJieCheng(5);
+        console.log(num);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

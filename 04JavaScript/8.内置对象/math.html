@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  案例一 求10~20之间的随机整数
+        function random(min, max){
+          return Math.floor(Math.random()*(max - min + 1) + min);
+          // Math.floor  是向下取整
+            // math.random  是取0到1之间的随机小数，而我们要取得是10到20之间的整数
+            // Math.floor(math.random()*(20 - 10 + 1) + 10)----
+            // (math.random()*(11 + 10)----(math.random()*[0, 10) + 10)---- (math.random()*[10, 21) 到这一步就相当于求的是10到21之间的任意数  包括小数
+            // 但Math.floor 是向下取整
+        }
+        console.log(random(10, 20));
+
+
+
+        // 案例二 随机生成颜色RGB [0, 255]整数       rgb(100, 100, 100);
+        function randomRGB(max, min) {
+            // 我们需要三个随机颜色  赋给color1,color2,color3,  它们的值是0到255中间的随机数
+            var color1 = random(min, max);
+            var color2 = random(min, max);
+            var color3 = random(min, max);
+            // 它的返回值是一个字符串
+            return 'rgb('+ color1 +', '+ color2 +', '+ color3 +')';
+        }
+        console.log(randomRGB(0, 255));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

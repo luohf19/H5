@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: deepskyblue;
+        }
+        div {
+            width: 400px;
+            height: 500px;
+            background: palevioletred url("qiqi.jpeg") no-repeat;
+            /*background-size: 300px  200px;*/    /* 我们尽量只改一个值，防止图片缩放失真扭曲*/
+            /*background-size: 50%;*/      /*把背景图片缩放为原来的一半*/
+         /*   background-size: cover;*/
+           /*    cover  会自动调整缩放比例，保证图片始终填充满整个背景区域，如有溢出部分则会被隐藏图片进行等比例缩放，图片一定要保证
+            宽度和高度同时满足盒子的大小，势必会有部分超出去，超出部分就看不见了，cover更常用一些*/
+            background-size: contain;
+            会自动调整缩放比例，保证图片始终完整显示在背景区域，图片进行等比例缩放，如果图片的高度或者宽度有一个和盒子一样大了，就
+            不再缩放，这样的好处就是保证了图片的完整性，不会有缺失的部分。
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+</html>

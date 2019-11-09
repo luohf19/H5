@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    1.// 提取工资
+    var str = '张三: 1000, 李四: 3000, 王五: 5000';
+    var reg = /\d+/g;
+    console.log(str.match(reg));
+    // 返回结果如下：
+    //  Array(3)
+    //  0: "1000"
+    //  1: "3000"
+    //  2: "5000"
+    //  length: 3
+</script>
+</body>
+</html>

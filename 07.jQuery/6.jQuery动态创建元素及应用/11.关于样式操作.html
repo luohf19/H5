@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮获取元素的高和宽，重新设置元素的高和宽，设置后的高和宽要是原来高和宽的两倍
+        $(function () {
+            $('#btn').click(function () {
+                // 获取元素的宽和高
+                // parseInt()  将一个字符串 string 转换为 radix 进制的整数
+                var width =parseInt($('#dv').css('width'));
+                var height =parseInt($('#dv').css('height'));
+                console.log('宽：'+width+'   '+'高：'+height);
+                $('#dv').css({'width':'400px','height':'200px'});
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="效果展示" id="btn">
+<div id="dv"></div>
+</body>
+</html>

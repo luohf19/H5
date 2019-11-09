@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<script>
+    // 移除事件   方法一
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        alert('hello world');
+        //onclick  移除事件   这样这个按钮就只会执行一次  就被移除掉了
+        btn.onclick = null;
+    }
+
+    //  如果想要移除事件  注册事件的时候就不能用匿名函数   不成了
+    brn.addEventListener('click', function () {
+        alert('helo world');
+        // addEventListener  移除事件
+       btn.removeEventListener('click' ,  )
+    });
+    // 移除事件   方法二
+    function btnClick() {
+        alert('hello world');
+        // 移除事件
+        btn.removeEventListener('click', btnClick);
+    }
+    btn.addEventListener('click', btnClick);
+    
+    // 移除事件   方法三
+    // chrome  火狐 都不支持attachEvent这个方法    IE9-10才支持
+    function btnClick() {
+        alert('hello world');
+        // 移除事件
+        btn.detachEvent('oncilck', btnClick);
+    }
+    btn.attachEvent('onclick', btnClick);
+</script>
+</body>
+</html>

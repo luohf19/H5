@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 2.new Object()
+        // Object 是一个构造函数
+        // new  的方式来调用构造函数    new Object()调用构造函数，会在内存中创建一个对象
+        // 属性
+        // JavaScript的动态特性
+        var hero = new Object();      //创建了一个空的对象
+        hero.name = '黄忠';
+        hero.weapon = '弓箭';
+        hero.equiment = ['头盔', '靴子', '盔甲'];
+        blood: 100;
+        // 方法
+        hero.attack = function () {
+            console.log(this.name + ':射箭');
+        }
+        hero.run = function () {
+            console.log(this.name + ':加速跑')
+        }
+        console.log(hero.name);
+        console.log(hero.equiment);
+        hero.attack();
+        hero.run();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: red;
+        }
+        /* 添加媒体查询，设置不同的屏幕宽度区间下的bidy的背景样式*/
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            body {
+                background-color: blue;
+            }
+        }
+        @media screen and (min-width: 992px) and (max-width: 1200px){
+            body {
+                background-color: pink;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            body {
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 媒体查询是来设置不同屏幕宽度下的   样式-->
+    <!-- 需求
+    1.默认情况下，body的背景颜色为red
+    2. w<768 green
+    3.w:768-992 blue
+    4.w:992-1200 pink
+    5.w>1200 purple
+    -->
+</body>
+</html>

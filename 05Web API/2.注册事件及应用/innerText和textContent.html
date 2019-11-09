@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var box = document.getElementById('box');
+    console.log(box.innerText);   // 获取内部文本
+    console.log(box.textContent);  // 获取内部文本
+
+    // 没什么区别  就是有浏览器兼容性
+    // 谷歌两个都支持
+    // 新版火狐  两个都支持
+    // 旧版火狐  只支持textContent
+    // 新版IE  两个都支持
+    // 旧版IE  只支持innerText
+
+</script>
+</body>
+</html>

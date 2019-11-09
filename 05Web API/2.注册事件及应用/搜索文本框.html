@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .gray {
+            color: gray;
+        }
+        .black {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<input type="text" class='gray' value="请输入搜索关键字" id="txtSerch">
+<input type="button" value="搜索" id="btnSerch">
+<script>
+    // 当文本框获得焦点  如果文本框里的内容是‘请输入关键字’  清空文本框  并且让文字变成黑色
+    var txtSerch = document.getElementById('txtSerch');
+    // 获取焦点的事件  用focus
+    txtSerch.onfocus = function () {
+        if(this.value === '请输入搜索关键字') {
+            this.value = '';   // 清空文本框
+            this.className = 'black';
+        }
+    }
+    // 当文本框失去焦点  如果文本框里的内容为空  还原文本框里面的文字  并且让字体变成黑色
+    // 失去焦点的时候  blur
+    txtSerch.onblur = function () {
+        // if(this.value = '')   //判断文本框里面的值是否为空  方法一
+        if(this.value.length === 0){  // 判断文本框里面的值是否为空  方法二
+            this.value = '请输入搜索关键字';
+            this.className = 'gray';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            border: 0;
+        }
+        .user {
+            border-width: 2px;
+            border-color: deeppink;
+            border-style: solid;
+        }
+        .nc {
+            border-top-width: 1px;       /*上边框宽度*/
+            border-top-color: blue;
+            border-top-style: solid;
+            border-bottom-width:1px ;            /*下边框宽度*/
+            border-bottom-color:yellow;
+            border-bottom-style: solid;
+        }
+        .email {
+            border-top: 1px red solid;       /*上边框宽度 样式  颜色  一起写*/
+            border-bottom: 1px blue solid;      /* 下边框宽度  样式  颜色  一起写*/
+        }
+        .tel {
+            border: 3px blue solid;       /*所有边框设置一致，综合简写*/
+        }
+    </style>
+</head>
+<body>
+<p></p>用户名：<input type="text" class="user"></p>
+<p>昵  称：<input type="text" class="nc"></p>
+<p>邮  箱：<input type="text" class="email"></p>
+<p>手  机：<input type="text" class="tel"></p>
+</body>
+</html>

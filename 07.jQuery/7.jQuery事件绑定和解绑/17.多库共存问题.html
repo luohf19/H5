@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        //让jQuery对$对象进行释放控制权
+        var xy = $.noConflict();
+        // 从此以后xy就是曾今的$
+        var $ = 100;  // $原本是对象-->有属性和方法    现在成变量-->没有属性和方法
+        // 或者直接把$写成jQuery
+        xy(function () {
+           xy('#btn').click(function () {
+               alert('真的很讨厌自己胖胖的样子');
+           });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+</body>
+</html>

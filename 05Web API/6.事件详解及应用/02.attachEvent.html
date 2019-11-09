@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<script>
+    var btn = document.getElementById('btn');
+    // attachEvent
+    // 第一个参数，事件的名称前要加 onclick      第二个参数function() {}
+    btn.attachEvent('onclick', function () {
+        alert('hello world');
+    });
+    btn.attachEvent('onclick', function () {
+        alert('hello heima');
+    });
+</script>
+</body>
+</html>

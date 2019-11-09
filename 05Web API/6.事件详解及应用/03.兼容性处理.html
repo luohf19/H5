@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<script>
+    var btn = document.getElementById('btn');
+    addEventListener(btn, 'click', function () {
+        alert('hello world');
+    });
+    addEventListener(btn, 'click', function () {
+        alert('hello heima');
+    });
+    // 处理注册事件的兼容性问题
+    function addEventListener(element, eventName, fn) {
+        // 判断当前浏览器是否支持addEventListenner
+        if (element.addEventListener){
+           element.addEventListener(eventName, fn, false);     // 第三个参数  默认是false
+        }else if (element.addEventListener){
+            element.attachEvent('on' + evevtName, fn);
+        } else {
+            // 相当于 element.onclick = fn;
+            element['on' + evevtName] = fn;
+        }
+    }
+</script>
+</body>
+</html>

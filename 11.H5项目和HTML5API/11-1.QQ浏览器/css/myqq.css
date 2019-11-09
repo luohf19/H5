@@ -1,0 +1,146 @@
+#bg {
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  /*水平居中   垂直居中*/
+    /*background: pink;*/
+    transition: all 2s;
+}
+.rotate {
+    transform: translate(-50%, -50%) rotateZ(-60deg)!important;
+}
+.row1 .orb1, .row1 .orb2 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -280px;
+    margin-left: -30px;
+}
+.row1 .orb2 {
+    margin-top: -300px;
+    margin-left: 500px;
+}
+.row1 div,
+.row2 div,
+.row3 div {
+    /*background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结束颜色)；*/
+    background:-webkit-linear-gradient(top, #FFFFFF, #DEDEDE);
+    border-radius: 50%;
+}
+.row2 .orb1,
+.row2 .orb2,
+.row2 .orb3 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -280px;
+    margin-left: -500px;
+}
+.row2 .orb2 {
+    margin-top: -180px;
+    margin-left: 100px;
+}
+.row2 .orb3 {
+    margin-top: -100px;
+    margin-left: -150px;
+}
+.row3 .orb1,
+.row3 .orb2 {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 00px;
+    margin-left: 0px;
+}
+.row3 .orb2 {
+    margin-top: -180px;
+    margin-left: 500px;
+}
+/*第一屏制作  开始*/
+.section {
+    perspective: 1000px;  /*透视*/
+}
+/*结束状态*/
+.comein .p1 {
+    transform: translate(-50%, -50%) translateZ(0) /*rotate(0deg)*/;
+}
+/*起始状态*/
+.p1 {
+    position: absolute;
+    width: 880px;
+    height: 320px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(800px) /*rotate(-180deg)*/;
+    background: url("../images/words.jpg") no-repeat;
+    transition: all 1s;   /*过渡*/
+    overflow: hidden;
+}
+/*第一屏制作  结束*/
+
+/*第二屏的开始*/
+.p2 {
+    position: absolute;
+    width: 316px;
+    height: 360px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) translateZ(-6000px) scale(0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: all 1s;  /*只要想做动画  就需要过渡效果*/
+}
+/*第二屏的结束*/
+/*第三屏的开始*/
+.section3 {
+    perspective: 1000px;
+}
+.p3 {
+    position: absolute;
+    width: 1440px;
+    height: 760px;
+    top: 50%;
+    left: 50%;
+    margin-left: -270px;
+    margin-top: -284px;
+    background-color: pink;
+    border: 1px solid #ccc;
+    /*transform: translateZ(-50px) rotateX(30deg);*/
+    transform: translateZ(1200px) rotateX(120deg);
+    transition: all 4s;
+
+}
+.words-03 {
+    position: absolute;
+    top: 38%;
+    left: 17%;
+    transform: translateZ(1200px) rotateY(-60deg);
+    transition: all 4s;
+}
+
+/*第三屏的节结束*/
+/*动画组*/
+.row1 div {
+    animation: orbmove 30s linear infinite;
+}
+.row2 div {
+    animation: orbmove 45s linear infinite;
+}.row3 div {
+     animation: orbmove 60s linear infinite;
+ }
+@keyframes orbmove {
+    form {
+        /*tranlate 相当于相对定位   从自己现在的位置开始一定距离*/
+        transform: translateX(0px) rotate(0deg);
+    } to {
+              transform: translateX(-2000px) rotate(-3600deg);
+          }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px;
+            position: relative;
+            overflow: hidden;
+            /*不让文字被选中*/
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .content {
+            padding: 5px 18px 5px 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .scroll {
+            width: 18px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #eeeeee;
+        }
+        .bar {
+            height: 100px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content" id="content">
+        童年的鲁迅，仿佛是一个生活在天堂的魔鬼，丰衣足食却寸步难行；而闰土则是生活在地狱的天使，生活艰辛但充满快乐。闰土的童年必须要看瓜田，但他自由、快乐。鲁迅的童年虽丰衣足食，但他只能悲哀地念着“之乎者也”。闰土还可以去做无穷无尽的新鲜事，看无边无际的海洋；而鲁迅只能看到那“四角的天空”。
+        没有了自由，多少财富都是破铜烂铁。自由才是真正的金子！
+        可那毕竟是几十年前的封建社会，离现在已经有那么漫长而浩瀚的一段历史。可是，到了现在的社会，大人们还是大同小异、异曲同工地为我们打造一个标准童年：束缚。
+        我觉得束缚再加上比较再加上无穷无尽的学习，与监狱相比也已经只有毫厘之差了。童年的鲁迅，仿佛是一个生活在天堂的魔鬼，丰衣足食却寸步难行；而闰土则是生活在地狱的天使，生活艰辛但充满快乐。闰土的童年必须要看瓜田，但他自由、快乐。鲁迅的童年虽丰衣足食，但他只能悲哀地念着“之乎者也”。闰土还可以去做无穷无尽的新鲜事，看无边无际的海洋；而鲁迅只能看到那“四角的天空”。
+        没有了自由，多少财富都是破铜烂铁。自由才是真正的金子！
+        可那毕竟是几十年前的封建社会，离现在已经有那么漫长而浩瀚的一段历史。可是，到了现在的社会，大人们还是大同小异、异曲同工地为我们打造一个标准童年：束缚。
+        我觉得束缚再加上比较再加上无穷无尽的学习，与监狱相比也已经只有毫厘之差了。作为社会未来的新动力，我们的生存状态难道没有理由受到关注吗？大人们总是以为吃饱穿暖学习好，就是一个孩子的全部，可这些却恰恰是我们这些孩子最忽略的。
+        我们需要自由，我们要亲身经历，我们也要知道许多新鲜事，我们要一个快乐的童年，我童年的鲁迅，仿佛是一个生活在天堂的魔鬼，丰衣足食却寸步难行；而闰土则是生活在地狱的天使，生活艰辛但充满快乐。闰土的童年必须要看瓜田，但他自由、快乐。鲁迅的童年虽丰衣足食，但他只能悲哀地念着“之乎者也”。闰土还可以去做无穷无尽的新鲜事，看无边无际的海洋；而鲁迅只能看到那“四角的天空”。
+        没有了自由，多少财富都是破铜烂铁。自由才是真正的金子！
+        可那毕竟是几十年前的封建社会，离现在已经有那么漫长而浩瀚的一段历史。可是，到了现在的社会，大人们还是大同小异、异曲同工地为我们打造一个标准童年：束缚。
+        我觉得束缚再加上比较再加上无穷无尽的学习，与监狱相比也已经只有毫厘之差了。作为社会未来的新动力，我们的生存状态难道没有理由受到关注吗？大人们总是以为吃饱穿暖学习好，就是一个孩子的全部，可这些却恰恰是我们这些孩子最忽略的。
+        我们需要自由，我们要亲身经历，我们也要知道许多新鲜事，我们要一个快乐的童年，我作为社会未来的新动力，我们的生存状态难道没有理由受到关注吗？大人们总是以为吃饱穿暖学习好，就是一个孩子的全部，可这些却恰恰是我们这些孩子最忽略的。
+        我们需要自由，我们要亲身经历，我们也要知道许多新鲜事，我们要一个快乐的童年，我们要逃离束
+    </div>
+    <div class="scroll" id="scroll">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
+<script src="../common.js"></script>
+<script>
+    var box = my$('box');
+    var content = my$('content');
+    var scroll = my$('scroll');
+    var bar = my$('bar');
+    // 1.根据内容的大小计算滚动条的高度
+    // 滚动条的高度 / scroll的高度 = box的高度 / 内容的高度
+    // offsetHeight     元素的大小 + padding + border
+    // clientHeight     元素的大小 + adding
+    // scrollHeight     内容的大小 + padding
+
+    // 当内容的高度大于box的高度再计算滚动条的高度，否则的话滚动条的高度为0
+    var barHeight = 0;
+    if(content.scrollHeight > box.clientHeight){
+        barHeight = box.clientHeight / content.clientHeight * scroll.clientHeight;
+    }
+    bar.style.height = barHeight + 'px';
+    // 2.让滚动条能够拖拽
+    // （1）.当鼠标按下的时候  求鼠标在滚动条中的位置
+    bar.onmousedown = function (e) {
+        e = e || window.event;
+        // 鼠标在滚动条中的位置
+        var y = getPage(e).pageY - bar.offsetTop - box.offsetTop;
+        // （2）.当鼠标在页面上移动的时候，求滚动条的位置
+        document.onmousemove = function (e) {
+            // 求滚动条的位置
+           var barY = getPage(e).pageY -box.offsetTop - y;
+           // 控制bar不能移除scroll
+            barY = barY < 0 ? 0 : barY;   // bar移动的最小距离
+            barY = barY > scroll.clientHeight - bar.clientHeight ? scroll.clientHeight - bar.clientHeight:barY;
+            bar.style.top = barY + 'px';
+            // 3.当拖拽滚动条的时候，改变内容的位
+            // 内容滚动的距离 / 内容最大能够滚动的距离 = 滚动条滚动的距离 / 滚动条最大能够滚动的距离
+             //  内容最大能够滚动的距离
+            var contentMax = content.scrollHeight - box.clientHeight;
+            // 滚动条最大能够滚动的距离
+            var barMax = scroll.clientHeight - bar.clientHeight;
+            var contentY = barY / barMax * contentMax;
+            content.style.top = -contentY + 'px';
+
+
+        }
+    }
+    document.onmouseup = function () {
+        // 移除鼠标移动事件
+        document.onmousemove = null;
+    }
+
+
+</script>
+</body>
+</html>

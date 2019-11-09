@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+            /*display: inline-block;    将块级元素转换成行内块元素，就可以放在同一行，但是元素之间有空隙，不方便处理*/
+            float: left; /* 浮动效果*/
+        }
+        div:first-child {
+            background-color: palevioletred;
+        }
+        div:last-child {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

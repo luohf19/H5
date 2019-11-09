@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //写一个函数   格式(format)化日期对象  返回yyyy-mm-dd  hh:mm:ss的形式
+        function formatDate(date) {
+        // 判断参数date是否是日期对象  instance是实例（对象）的意思    of  的
+            // date instanceof Date    使用方法
+            // 前面第一个date变量  判断这个变量是不是Date的实例（也就是这个变量是不是Date这个构造函数创建出来的）
+            // 如果是他会返回true    如果不是  他会返回false
+           // console.log(date instanceof Date); //打印结果是false
+            if(!(date instanceof Date)){      //!感叹号的意思是如果date这个变量不算Date这个的对象的时候，就不再往下执行，直接return
+                 console.error('date不是日期对象');// 告诉用户出错，并告诉用户出错的位置。
+
+                console.log(date.getFullYear());    // 打印年份
+                console.log(date.getMonth() + 1);   // 打印月份  获取月份是从0开始的  获取正确的月份要+1
+               return;
+            }
+            var year = date.getFullYear(),
+                month = date.getMonth(),
+                day = date.getDay(),
+                hour = date.getHours(),
+                minute = date.getMinutes(),
+                second = date.getSeconds();
+            month = month < 10 ? '0' + month : month;// ？是三元运算符   如果month<10，前面加零，如果不是，返回month值
+            day = day < 10 ? '0' + day : day;
+            hour = hour < 10 ? '0' + hour : hour;
+            minute = minute < 10 ? '0' + minute : minute;
+            second = second < 10 ? '0' + second : second;
+
+            return year + '-' + month + '-' + day + ' ' + hour + ':' +minute + ':' + second;
+        }
+        var d = new Date(2019,8,11);
+        var dateStr = formatDate(d);
+        console.log(dateStr);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

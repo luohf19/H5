@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 因为页面是从上往下执行的   此时我们获取不到div里面的内容
+        // BOM  里面有一个onload    可以在页面加载完成之后执行
+        // 页面加载完成，页面上的所有元素创建完毕，并且引用的外部资源下载完毕（js css 图片）
+        // window.onload = function ( ) 也可以省略window
+        onload = function () {
+            var box = document.getElementById('box');
+            console.log(box);
+        }
+        // onunload   页面卸载的时候执行
+        onunload = function (){
+            // 在onunload中所有的对话框都无法使用   window 对象被冻结
+            console.log('bye bye');
+        }
+    </script>
+
+
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

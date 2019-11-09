@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a id="link" href="http://www.baidu.com">baidu</a>
+<script>
+    var link = document.getElementById('link');
+    link.onclick = function (e) {
+        alert('hello world');
+        // 取消默认行为有三种方法
+        // ruturn false;   一
+        // e.preventDefault();   二   DOM标准方法
+        // e.returnValue = false; 三   IE的老版本  非标准方式
+    }
+</script>
+</body>
+</html>

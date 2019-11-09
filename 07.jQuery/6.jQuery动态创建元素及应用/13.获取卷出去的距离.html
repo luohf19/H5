@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 2000px;
+            height: 2000px;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        //  鼠标点击 获取滚动条卷出去的距离
+        $(function () {
+            $(document).click(function () {
+                // scrollLeft()  获取的是卷出去的宽度
+                // scrollTop()   获取的是卷出去的高度
+                console.log($(this).scrollLeft()+'===='+$(this).scrollTop());
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

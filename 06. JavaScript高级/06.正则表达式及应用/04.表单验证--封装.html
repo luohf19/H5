@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+QQ号：<input type="text" id="txtQQ"><span></span><br>
+邮箱：<input type="text" id="txtMail"><span></span><br>
+手机：<input type="text" id="txtPhone"><span></span><br>
+生日：<input type="text" id="txtBirthday"><span></span><br>
+姓名：<input type="text" id="txtName"><span></span><br>
+
+<script>
+    // 1.验证QQ
+    addCheck('txtQQ', /^\d{5,12}$/, '请输入正确的QQ格式');
+    // 2.验证邮箱
+    addCheck('txtMail',/^\w+@\w+(\.\w+)+$/, '请输入正确的电子邮箱格式');
+    // 3.验证手机号
+    addCheck('txtPhone', /^\d{11}$/, '请输入正确的手机号码');
+    // 4.验证日期
+    addCheck('txtBirthday',/^\d{4}-\d{1,2}-\d{1,2}$/, '请输入正确的日期');
+    // 5.姓名
+    addCheck('txtName', /^[\u4e00-\u9fa5]{2,4}$/, '请输入正确的名字')
+    // 把文本框的验证封装成一个函数
+    // 第一个参数是ID
+    // 第二个参数是 正则表达式对象
+    // 第三个参数是 提示的文本
+
+    function addCheck(elementId, reg, tip) {
+        var element = document.getElementById(elementId)
+        element.onblur = function () {
+            var span = this.nextElementSibling;
+            if (!reg.test(this.value) ) {
+                span.innerText = tip;
+                span.style.color = 'red';
+            } else {
+                span.innerText = '';
+                span.style.color = '';
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box1 {
+            width: 600px;
+            height: 600px;
+            background-color: sandybrown;
+        }
+        #box2 {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+        }
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="box1">
+    <div id="box2">
+        <div id="box3">
+        </div>
+    </div>
+</div>
+<script>
+// 通过事件对象，可以获取到事件发生的时候和事件相关的一些数据
+    var btn = document.getElementById('btn');
+    btn.onclick = function (e) {
+        // DOM标准中，是给事件处理函数一个参数
+        // e就是事件对象
+        // 在老版本的IE中获取事件对象的方法是  window.event
+
+        // 处理事件对象的浏览器兼容性
+        e = e || window.event;
+
+        // 事件的阶段：1.捕获阶段  2.目标阶段  3.冒泡阶段
+      // console.log(e.eventPhase);    // 打印出来的是一个数字   对应的是事件的阶段
+
+        // e.target  获取真正触发事件的对象
+        // 在老版本IE中   scrElement
+        var target = e.target || e.srcElement;  // 处理浏览器兼容性问题
+        console.log(e.target);
+
+        // e.currentTarget  事件处理函数所属的对象
+        console.log(e.currentTarget);
+    }
+
+</script>
+</body>
+</html>

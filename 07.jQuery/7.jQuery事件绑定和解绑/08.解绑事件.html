@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击第一个按钮 为div中的p标签绑定事件
+        // 点击第二个按钮，为解除绑定事件
+        $(function () {
+            // 为div中的p绑定点击事件
+            $('#btn1').click(function () {
+            $('#dv').delegate('p','click',function () {
+                    alert('我被点了');
+            });
+            // 解除绑定
+                $('#btn2').click(function () {
+                    $('#dv').undelegate('p','click');
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="绑定事件" id="btn1">
+<input type="button" value="解绑事件" id="btn2">
+<div id="dv">
+    <p>我是一个p标签</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .wrap {
+            width: 350px;
+            height: 30px;
+            margin: 200px auto 0;
+            padding-left: 10px;
+            background-image: url("images/bg.JPG") ;
+        }
+        .wrap li {
+            background-image: url('images/libg.JPG');
+        }
+        .wrap > ul > li {
+            float: left;
+            margin-right: 10px;
+            position: relative;
+        }
+        .wrap a {
+            display: block;
+            height: 30px;
+            width: 100px;
+            text-decoration: none;
+            color: #000000;
+            line-height: 30px;
+            text-align: center;
+        }
+        .warp li ul {
+            position: absolute;
+            top: 30px;
+            display: none;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            $('.wrap>ul>li').mouseover(function () {
+                // 鼠标选中时选中的ul里面的li显示
+                $(this).children('ul').show();  //show（）方法   是显示
+            });
+            $('.wrap>ul>li').mouseout(function () {
+                // 鼠标离开时选中的ul里面的li隐藏
+                $(this).children('ul').hide();  //hide（）方法   是隐藏
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">帅哥系列</a>
+                <ul>
+                    <li><a href="javascript:void(0);">乔峰</a></li>
+                    <li><a href="javascript:void(0);">张无忌</a></li>
+                    <li><a href="javascript:void(0);">郭靖</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">美女系列</a>
+                <ul>
+                    <li><a href="javascript:void(0);">柳岩</a></li>
+                    <li><a href="javascript:void(0);">刘亦菲</a></li>
+                    <li><a href="javascript:void(0);">杨幂</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);">渣男腐女</a>
+                <ul>
+                    <li><a href="javascript:void(0);">凤姐</a></li>
+                    <li><a href="javascript:void(0);">助教</a></li>
+                    <li><a href="javascript:void(0);">导师</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

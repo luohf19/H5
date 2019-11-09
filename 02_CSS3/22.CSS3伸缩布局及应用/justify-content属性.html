@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section {
+            width: 1000px;
+            height: 300px;
+            border: 2px solid pink;
+            margin: 100px auto;
+            display: flex;
+            /*justify-content: flex-end;让子元素在富容器的后面开始排序*/
+           /* justify-content: space-around;   相当于给每个盒子添加了左右margin外边距*/
+            justify-content: space-between;  /*左右的盒子贴近父盒子，中间的平均分布空白间隙*/
+        }
+        div {
+            width: 250px;
+            height: 100%;
+        }
+        div:first-child {
+            background-color: pink;
+        }
+        div:nth-child(2) {
+            background-color: purple;
+        }
+        div:last-child {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+</body>
+</html>

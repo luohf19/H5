@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 用DOM的方式
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                // 获取div的id
+                var divObj = document.getElementById('dv');
+                divObj.style.width = '200px';
+                divObj.style.height = '100px';
+                divObj.style.backgroundColor = 'red';
+            }
+        }
+
+        // 用jQuery的方法
+
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="效果显示" id="btn">
+<div id="dv"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    // 1.获取dom元素
+    var div = document.querySelector("div");
+    // 2.添加事件
+    // 添加开始触摸事件，当手指触摸到屏幕触发
+    div.addEventListener("touchstart", function () {
+        console.log("touchstart");
+    });
+    // 添加手指滑动事件 当手指在屏幕上滑动时触发  move事件是持续触发的
+    div.addEventListener("touchmove", function () {
+        console.log("touchmove");
+    });
+    // 添加触摸结束事件，当手指离开屏幕时触发
+    div.addEventListener("touchend", function () {
+        console.log("touchend");
+    });
+    // 添加触屏以外中断事件 （无法模拟演示）
+    div.addEventListener("touchcancel", function () {
+
+    });
+</script>
+</body>
+</html>

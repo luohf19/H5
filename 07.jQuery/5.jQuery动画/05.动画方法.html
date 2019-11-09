@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 动画方法 animate（）方法，有三个参数
+        // 第一个参数：键值对｛数值的属性可以改  颜色不能改｝--- 对象
+        // 第二个参数：动画的时间 1000毫秒---1秒
+        // 第三个参数：回调函数---匿名函数
+
+        // opacity   设置透明度
+        $(function () {
+            $('#btn').click(function () {
+                // 获取div 产生动画
+                $('#dv').animate({'width':'300px','height':'200px','left':'800px'},1000);
+            });
+            $('#btn').click(function () {
+                $('#dv').animate({'width':'30px','height':'40px','right':'700px','top':'500px','},1000);
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="动画" id="btn">
+<div id="dv"></div>
+</body>
+</html>

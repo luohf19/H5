@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.RegExp对象
+    //  test()  匹配
+    //  exec()  提取  只返回一个匹配到的结果，如果没有匹配的内容返回null
+    //  2.String对象
+    //  match()  提取  可以提取多个内容
+    //  replace()  替换
+    //  split()   切割
+    //  search()
+
+    var str = '张三: 2500, 李四: 5000, 王五:50000';
+
+    // var reg = /\d+/gi; 这里的gi 是全局匹配并且忽略大小写
+    var reg = /\d+/gi;
+
+     // var concent = reg.exec(str);
+     // console.log(concent);  //打印结果只有一个值2500
+
+    //项要全部提取  需要用到循环
+    do{
+        var concent = reg.exec(str);
+        if (concent != null) {
+            console.log(concent[0]);
+        }
+    }while(concent);
+
+
+</script>
+</body>
+</html>

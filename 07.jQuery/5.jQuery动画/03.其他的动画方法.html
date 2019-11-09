@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            // 滑入、滑出、切换滑入滑出
+            // slideUP、slideDown、slideToggle方法中都可以写参数，参数类型1.数字类型2.字符串类型
+            // 1.数字类型：1000表示的是毫秒 -- 1秒
+            // 2.字符串类型：‘slow’ 'normal''fast'
+            //点击第一个按钮
+            $('#btn1').click(function () {
+                $('div').slideUp();
+            });
+            // 点击第二个按钮
+            $('#btn2').click(function () {
+                $('div').slideDown();
+            });
+            //点击第三个按钮
+            $('#btn3').click(function () {
+                $('div').slideToggle();
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="滑入" id="btn1">
+<input type="button" value="滑出" id="btn2">
+<input type="button" value="切换" id="btn3">
+<div></div>
+</body>
+</html>

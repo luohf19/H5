@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 120px;
+            height: 20px;
+            border: 1px solid #f00;
+            white-space: nowrap;     /* 首先需要添加这句话   强制一行*/
+            overflow: hidden;    /*其次必须有这句话*/
+            /*text-overflow: clip;         直接剪裁*/
+            text-overflow: ellipsis;      /*　超出的部分，用省略号代替　*/
+        }
+    </style>
+</head>
+<body>
+<div>我的名字叫沈冬烨，我有一个妹妹叫沈知瑶</div>
+</body>
+</html>

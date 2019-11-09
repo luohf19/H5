@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 400px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px;
+            position: relative;         /* 父级有定位 则以父亲为基准点对齐  还可以是absolute*/
+        }
+        .son {
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       * {
+           padding: 0;
+           margin: 0;
+       }
+        a {
+            height: 33px;
+            background: url("to.png") no-repeat;
+           /* 千万不能给宽度，写死宽度是不对的，我们要做推拉门效果  自由缩放*/
+            padding-left: 15px;
+            display: inline-block;    /*行内元素转换成行内块元素*/
+            margin: 50px;
+            line-height:33px ;         /*文字垂直居中*/
+            color: #fff;
+            text-decoration: none;
+
+        }
+        a span {
+            height: 33px;
+            background: url("to.png") no-repeat right;
+               /* 用span 做右边的圆角 背景图片可右对齐*/
+            display: inline-block;
+             /* span  不能给宽度，要用Padding挤开    */
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+<a href="#">
+    <span>首页</span>
+</a>
+<a href="#">
+    <span>公司简介</span>
+</a>
+<a href="#">
+    <span>家庭成员123</span>
+</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 225px;
+            height: 225px;
+            margin: 100px auto;
+            position: relative;
+        }
+        img {
+            position: absolute;      /*   两个图片有叠加   用子绝父相*/
+            top: 0;
+            left: 0;
+            transition: all 1s;          /* 过渡效果*/
+            backface-visibility: hidden;     /*只要不是正面对着屏幕就隐藏*/
+        }
+        img:nth-child(1) {
+            z-index: 1;
+        }
+        div img:hover {
+            transform: rotateY(180deg);          /*沿着Y轴旋转180度*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="qian.svg" alt="">
+    <img src="hou.svg" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="txt" type="text">
+<script>
+    // 键盘事件
+    // keydown 键盘按下的时候
+    // keyup  键盘弹起的时候
+    // 两者的区别：keydown的时候，我们所按的键黑，还没有落入文本框
+    //            keyup键盘弹起的时候按的键已经落入文本框
+    var txt = document.getElementById('txt');
+    txt.onkeydown = function (e) {
+        // 判断当前用户按下的键是否是数字
+        e = e || window.event;
+        // e.keyCode 是键盘码
+        // keyCode的值在48-57之间 是数字
+        // 后退键对应的键盘码是8
+        if ((e.keyCode < 48 || e.keyCode > 57) && e.keyCode !== 8){
+            // 说明是非数字
+            // 取消默认行为
+            e.preventDefault();  // 只取消默认行为  后面的代码继续执行
+            // return false;   取消默认行为，同时后面的代码也不再执行
+        }
+    }
+
+</script>
+</body>
+</html>

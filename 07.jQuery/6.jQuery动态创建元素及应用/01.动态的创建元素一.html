@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // DOM中创建元素的方法：
+        // 1.document.write('标签代码')；有缺陷（页面加载后，创建的元素会把页面原有的元素全部干掉）
+        // 2.innerHTML
+        // 3.document.createElement(‘标签的名字’)；
+
+        // jQuery中创建元素
+        // 1.$('标签的代码')
+        // 2.对象.heml('标签的代码')
+
+            // 点击按钮在div中创建一个超链接
+        $(function () {
+            var i = 0;
+
+            $('#btn').click(function () {
+                i++;
+                // 创建元素
+                var Obj = $('<a href="http://www.baidu.com">百度'+ i +'</a>');
+                // 把元素添加到div中
+                $('#dv').append(Obj);  // 把超链接追加到div中
+
+                // 把元素插入到某个元素的前面
+                $('#dv').prepend(Obj);
+                //  把元素插入到某个元素的后面(兄弟元素来添加)
+                $('#dv').after(Obj);
+                // 把元素插入到某个元素的前面(兄弟元素来添加)
+                $('#dv').before(Obj);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="dv"></div>
+</body>
+</html>

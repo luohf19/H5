@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+         //求两个数的最大值
+    /*    function getMax(a,b){
+            if(a > b){
+                console.log(a);
+            } else {
+                console.log(b);
+            }
+        }
+        var x = 199;
+        var y = 200;
+        getMax(x,y);*/
+
+        //求n个数的最大值   我们可以用到数组
+        function getMax(arr){
+            var max = arr[0];
+            for(var i = 1; i < arr.length; i++){
+                if(max < arr[i]){
+                    max = arr[i];
+                }
+            }
+            console.log(max);
+        }
+         var array = [15,48,5,6,98,65,84,123,455];
+         getMax(array);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

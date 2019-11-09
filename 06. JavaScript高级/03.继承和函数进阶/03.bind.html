@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn(x, y) {
+        console.log(this);
+        console.log(x + y);
+    }
+    var o ={
+        name: 'zs'
+    };
+    // bind( )   改变函数中的this值，并返回一个新的函数（不调用函数）
+    var f = fn.bind(o, 1, 2);
+    f();
+</script>
+</body>
+</html>

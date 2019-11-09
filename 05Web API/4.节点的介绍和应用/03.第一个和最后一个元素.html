@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <div>我是一个广告图片</div>
+        <ul>
+            <li>这是一个列表</li>
+        </ul>
+        <span>说明性文字</span>
+    </div>
+    <script>
+        // box.firstchild    获取第一个子节点
+        // box.firstElementChild     获取第一个子元素    但是有浏览器兼容性问题  从IE9以后支持
+        // box.lastchild     获取最后一个子节点
+        // box.lastElementChild     获取最后一个子元素    但是有浏览器兼容性问题  从IE9以后支持
+        var ele = getFirstElementChild('box');
+        console.log(ele);
+           //  处理浏览器兼容性问题
+        function getFirstElementChild(element){
+            var node, nodes = element.childNodes, i = 0;
+            while(node = nodes[i++]){
+                if(node.nodeType === 1){
+                    return node;
+                }
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>

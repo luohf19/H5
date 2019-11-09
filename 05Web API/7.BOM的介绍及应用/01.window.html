@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 定义的全局变量都属于window，都是window对象的属性
+    var age = 18;
+    console.log(window.age);
+    console.dir(window);  // 可以打印出window的全部属性
+    // name是window的属性，是字符串类型
+    var name = 18;
+    console.dir(name);    // 打印结果是黑体的123，已经被转换成字符串型
+    // top是window的属性，只能获取不能赋值
+    var top = 'top';
+    console.log(top);
+ </script>
+</body>
+</html>

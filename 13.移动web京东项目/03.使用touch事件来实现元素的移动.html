@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            /*background-color: red;*/
+            background: linear-gradient(red,blue);
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<script>
+    // 拖拽操作
+    var div = document.querySelector("div");
+    var startX,startY,moveX,moveY,distanceX,distanceY;
+    // 开始触摸
+    // 如果为document添加对象，那么就能够自动的捕获到当前相应事件的对象
+    document.addEventListener("touchstart",function (e) {
+        // 获取当前第一次触摸时的对象
+        console.log(e.target);
+        startX = e.targetTouches[0].clientX;
+        startY = e.targetTouches[0].clientY;
+    });
+    // 触摸滑动 持续触发
+    document.addEventListener("touchmove",function (e) {
+        // 记录手机滑动过程中的坐标值
+        moveX = e.targetTouches[0].clientX;
+        moveY = e.targetTouches[0].clientY;
+        // 计算与上一次坐标的差异
+        distanceX = moveX - startX;
+        distanceY = moveY - startY;
+        // 设置偏移
+        e.target.style.transform="translate("+distanceX+"px,"+distanceY+"px)";
+    });
+    // 触摸结束
+    document.addEventListener("touchend",function (e) {
+
+    })
+</script>
+</body>
+</html>

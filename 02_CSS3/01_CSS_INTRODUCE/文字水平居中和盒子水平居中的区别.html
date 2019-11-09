@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 150px;
+            border: 1px solid deeppink;
+            text-align: center;     /*文字水平居中*/
+            margin: 0 auto;      /* 盒子水平居中   左右的  margin  改为  auto  就可以了*/
+        }
+        section {
+            width: 400px;
+            height: 400px;
+            border:1px double black;
+        }
+        section img {
+            width: 200px; /*插入图片更改大小是用width 和height*/
+            height: 280px;
+            margin-top: 25px;   /*插入图片更改位置  可以用margin 或 padding来实现*/
+            margin-left: 30px ;    /*插入图片也是一个盒子*/
+        }
+        aside {
+            width: 400px;
+            height: 400px;
+            border: 1px solid palevioletred;
+            background: #fff url("liu.jpg") 0 0 no-repeat;
+            background-size: 200px 280px;   /* 背景图片更改大小只能用background-size*/
+            background-position: 30px 50px;   /* 背景图片更改大小  只能用  background-position */
+        }
+    </style>
+</head>
+<body>
+1.文字水平居中  和   盒子水平居中的区别
+<div>文字水平居中</div>
+2.插入图片和背景图片的区别
+<section>
+    <img src="liu.jpg" alt="">235
+</section>
+    <aside>12</aside>
+</body>
+</html>

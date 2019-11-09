@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn(x, y) {
+        console.log(this);
+        console.log(x + y);
+    }
+    var o ={
+        name: 'zs'
+    };
+    // call( )  改变函数中的this  直接调用
+    fn.call(o, 3, 5);
+</script>
+
+</body>
+</html>

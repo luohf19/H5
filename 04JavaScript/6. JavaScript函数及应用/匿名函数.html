@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //函数声明    命名函数
+        function fn(){
+        }
+
+        //函数表达式 ---后半部分是匿名函数   function ()
+        var fn = function (){
+        }
+
+        //自调用函数  --当函数书写完成之后立即调用
+        （function () {   //当我们这样写的时候   输出会显示语法错误
+            console.log('我是自调用函数');
+        }）（）    //需要用括号括起来   里面就是一个表达式   最后的小括号就是函数调用
+
+
+  if (true) {}
+  for (var i = 0; i <= 100; i++){}
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

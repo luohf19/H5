@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 继承是类型和类型之间的关系
+    // 老师  学生  --->   person
+    // 继承的目的：把子类型中共同的成员提取到父类型中，代码重用
+
+    // 父类型
+    function Person() {
+        this.name = 'zs';
+        this.age = 18;
+        this.sex = '男';
+
+    }
+    // 子类型
+    function Student() {
+        this.score = 100;
+    }
+
+Student.prototype = new Person();   // 去原型对象来找  n
+    Student.prototype.constructor = Student;  //  constructor来
+
+
+    var s1 = new Student();
+    function Teacher() {
+        this.salary = 3000;
+    }
+
+    //  原型继承无法设置构造函数的参数  因为new person只能传一次参数  只能调用一次   这个方法不推荐使用
+
+
+
+</script>
+</body>
+</html>

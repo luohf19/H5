@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // call  bind  apply  改变函数中的this
+
+    // 函数是一个对象
+    // var fn = new function();
+    function fn() {
+
+    }
+    // 证明fn是Function的实例（对象）
+    console.log(fn.__proto__ === Function.prototype);   // 打印结果是true
+
+    console.dir(fn);
+
+    function fn(x, y) {
+        console.log(this);  // -->this 指向 obj
+        console.log(x + y); // --> 5+6  打印结果是11
+    }
+    var obj = {
+        name: 'zs'
+    }
+    fn.call(obj, 5, 6)
+
+   // fn(5, 6);  // this--> window
+    // 1. 调用函数，改变函数中的this
+
+    // 2.第一个参数，设置函数内部this的指向
+        // 其他参数，对应函数的参数
+    // 3.函数返回值，call的返回值就是函数的返回值
+    // 4.测试
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //   练习一   将一个字符串数组输出为|分隔形式
+       /* var arr = ['刘备', '张飞', '关羽'];
+        arr.tostring();    //打印结果是刘备，张飞，关羽
+        console.log(arr.join('|'));        //打印结果是刘备|张飞|关于
+*/
+        // 练习二 翻转数组
+        var arr = ['b', 'e', 'c', 'f'];
+        arr.reverse();
+        console.log(arr);
+
+        //  练习三   工资数组[1500, 1200, 2000, 2100, 1800],把工资超过2000的删除
+        // filter 创建一个新数组, 其包含通过所提供函数实现的测试的所有元素
+        //  也就是把满足条件的元素返回到一个新数组中
+        var arr = [1500, 1200, 2000, 2100, 1800];
+        var newArray = arr.filter(function (item){  //item  就是数组中的每一个元素
+
+            return item < 2000;   //小于2000的数返回到新数组
+        })
+        console.log(newArray);
+
+        //练习四   ['a', 'c', 'z', 'a', 'x', 'a']找到数组中每一个a出现的位置
+        var arr = ['a', 'c', 'z', 'a', 'x', 'a'];
+        // console.log(arr.indexOf('a'))    //indexOf  从前往后找  打印结构
+        // console.log(arr.lastIndexOf('a'))    //lastIndexOf  从后往前找
+        // console.log(arr.indexOf('a', 2));//indexof的第二个参数，设置indexof查找的开始位置
+           //如果没有找到元素  indexof会返回-1；
+        var index = -1;
+        do{
+           index = arr.indexOf('a', index + 1);
+           if (index !== -1) {
+               console.log(index);
+           }
+        } while (index !== -1)   //最后打印结果0，3，5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

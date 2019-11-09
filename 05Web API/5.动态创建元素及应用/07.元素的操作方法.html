@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" id="btn" value="按钮">
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<div id="div"></div>
+<script>
+    // insertBefore()         把元素插入到页面的指定位置
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+            var li = document.createElement('li');
+            li.innerText = 'abc';
+            //把li 插入到ul中的第一个位置
+            var ul = document.getElementById('ul');
+            ul.insertBefore(li, ul.children[0]);  // 把新建的li插入到ul中的第一个元素前面
+        }
+</Script>
+</body>
+</html>

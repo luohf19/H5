@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* 有两个状态  一个是结束状态  一个是起始状态 */
+        div {
+            width: 1000px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+            perspective: 1000px;  /*透视*/
+        }
+        /*结束状态*/
+        .comein .p2 {
+            border-radius: 25%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /*起始状态*/
+        .p2 {
+            border-radius: 25%;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateZ(800px);
+            transition: all 2s;   /*过渡*/
+        }
+    </style>
+</head>
+<body>
+<button>进场</button>
+<button>出场</button>
+    <div >
+        <img src="images/timg.jpg" alt="" class="p2">
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        // 按照一定条件触发
+        $("button:first").on("click",function () {
+            $("div").addClass('comein');
+        })
+        $("button:eq(1)").on("click",function () {
+            $("div").removeClass('comein');
+        })
+    });
+</script>
+</html>

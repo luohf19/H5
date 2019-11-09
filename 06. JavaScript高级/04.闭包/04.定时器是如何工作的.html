@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  console.log('start');
+
+  setTimeout(function () {
+      console.log('timeout');
+  }, 0);
+
+  console.log('over');
+    // 打印顺序是start    over   timeout
+    //  是从上往下执行，但最后执行任务队列上的函数代码
+</script>
+</body>
+</html>

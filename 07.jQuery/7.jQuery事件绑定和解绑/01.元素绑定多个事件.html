@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 鼠标进入到按钮中颜色变为红色，鼠标离开颜色还原，点击按钮  弹出对话框
+        $(function () {
+            /*$('#btn').mouseover(function () {
+                $(this).css('backgroundColor','red');
+            });
+            $('#btn').mouseout(function () {
+                $(this).css('backgroundColor','');
+            }); $('#btn').click(function () {
+                alert('今天天气真好呀');
+            });*/
+
+            // 链式编程   的方法
+            //$('#btn').mouseover（function{}）,.mouseout(function{}),.click(function{})
+
+            // bind()方法可以为元素同时绑定多个事件
+            // bind()  方法：第一个参数是事件名字；第二个参数是事件处理函数--匿名函数
+            // $('#btn').bind({'mouseover':function(){},'mouseout':function () {},'click':function(){}})
+            $('#btn').bind({'mouseover':function(){
+                    $(this).css('backgroundColor','red');
+                },'mouseout':function () {
+                    $(this).css('backgroundColor','');
+                },'click':function(){
+                    alert('今天天气真好喔');
+                }})
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+</body>
+</html>

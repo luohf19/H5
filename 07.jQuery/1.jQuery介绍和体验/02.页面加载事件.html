@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // DOM页面加载事件
+    // 只能打印一个结果  当写多个时 只执行最后一个
+    window.onload = function () {
+        console.log('你的梦想是什么？一');
+    };
+    window.onload = function () {
+        console.log('你的梦想是什么？二');
+    };
+</script>
+
+<script src="../jquery-1.12.2.js"></script>
+
+<script>
+    // jQuery的代码和DOM中的window.onload事件是相同的
+    // 页面加载  方法一
+    // 这种方法是页面中所有的内容加载完毕才触发（标签，图片，文字内容等...）
+    $(window).load(function () {
+        console.log('我的梦想是科学家1');
+    });
+    $(window).load(function () {
+        console.log('我的梦想是科学家2');
+    });
+
+    // 页面加载  方法二
+    // 页面中的基本标签加载完毕就可以触发  比方法一快
+    $(document).ready(function () {
+        console.log('我的梦想是宇航员1');
+    });
+    $(document).ready(function () {
+        console.log('我的梦想是宇航员2');
+    });
+
+    // 页面加载   方法三
+    // 方法三和方法二一样  都是页面中的基本标签加载完毕就可以触发
+    jQuery(function () {
+        console.log('我的梦想是舞蹈家1');
+    });
+    jQuery(function () {
+        console.log('我的梦想是舞蹈家2');
+    });
+
+    // 页面加载  方法三简写   最推荐的写法
+    $(function () {
+        console.log('我的梦想是可以环球世界1');
+    })
+    $(function () {
+        console.log('我的梦想是可以环球世界2');
+    })
+
+</script>
+</body>
+</html>

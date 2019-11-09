@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 对象的拷贝
+    var obj1 = {
+        name: 'zs',
+        age: 18,
+
+        dog: {
+            name:'金毛',
+            age: 2,
+            color: '黄色'
+        },
+        sex: '男',
+    }
+    var obj2 = {};
+    // 封装函数  把o1的成员复制给o2
+    function copy(o1, o2) {
+        for (var key in o1) {
+            o2[key] = o1[key];
+        }
+    }
+    copy(obj1, obj2);
+
+    obj1.name = '张飞';
+    obj1.dog.name = '嘻哈';
+
+    console.log("obj2",obj2);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 日期构造函数Date()
+        // 1.空构造函数    没有参数  获得的是当前时间
+        var d = new Date();
+        console.log(d);
+        console.log(d.valueOf())    // 可以打印毫秒值
+
+        // 2构造函数中传入毫秒值
+        var d = new Date(1565492086588);   //如果我们有一个毫秒值，我们可以把他传到日期对象里面  获得日期
+        console.log(d);
+
+        // 3.可以出入日期形式的字符串
+        var d = new Date('2018-8-8 8:12:24');
+        console.log(d);
+
+        // 4.可以传入数字
+        var d = new Date(1928,8,8);
+        console.log(d);
+        console.log(d.valueOf());   //打印毫秒值
+
+         //获取日期对象的毫秒值
+        var d = new Date();
+        console.log(d.valueOf());    // 获取日期对象的毫秒值   不用我们调用
+        console.log(d.getTime());    // 和valueof的作用是一样的
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

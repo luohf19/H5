@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 50px;
+            /*border: 2px solid red;   解决外边距合并（塌陷）的问题  可以给他一个边框*/
+           /* padding: 1px;          给1像素的内边距也可以解决*/
+            overflow: hidden;
+        }
+        .son {
+            width: 250px;
+            height: 200px;
+            background-color: deeppink;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

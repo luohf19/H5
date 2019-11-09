@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="btn" value="跳转">
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            // console.log(location.href);  // 获取浏览器地址
+            // location.href = 'http://www.itheima.com';   //可以跳转到该网址
+             // assign  委派
+             //  assign()  的作用和href的作用一样，可以让页面跳转到指定的地方
+             // location.assign('http://www.itheima.com');
+            // replacer() 替换掉地址栏中的地址，但是不记录历史   也就是不能后退到前一个页面
+            // location.replace('http://www.itheima.com');
+            //重新加载  refresh     和f5的作用一样
+
+            //location.reload()  有两个参数
+            // true  强制从服务器获取页面
+            // false 如果浏览器有缓存的话，直接从缓存获取页面
+            location.reload(true);
+
+
+
+
+        }
+
+
+    </script>
+</body>
+</html>

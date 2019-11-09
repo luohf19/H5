@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="box"></div>
+<script src="../common.js"></script>
+<script>
+    var datas = ['西施', '貂蝉', '杨玉环', '王昭君'];
+    // 点击按钮  动态创建列表  鼠标放上去高亮显示
+   // var btn = document.getElementById('btn');
+    my$('btn').onclick = function () {
+        // 动态创建ul  内存中创建对象
+        var ul = document.createElement('ul');
+        // 把ul放到页面   把ul放到DOM树上  并且会重新绘
+        my$('box').appendChild(ul);
+        for (var i = 0; i < datas.length; i++) {
+            var datas = datas[i];
+            // 内存中动态创建li
+            var li = document.createElement('li');
+            // 把Li添加到DOM树上  并且会重新绘制
+            ul.appendChild(li);
+            // 设置li中显示的内容
+            li.innerText = data;
+
+
+            //设置标签之间的内容
+            function setInnerText(element, content){
+                // 判断当前浏览器是否支持   innerText
+                if(typeof element.innerText === 'string'){
+                    element.innerText = content;
+                }else {
+                    element.textContent = content;
+                }
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

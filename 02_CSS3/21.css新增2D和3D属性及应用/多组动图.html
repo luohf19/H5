@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            animation: go 6s infinite;         /*引用动画*/
+            /*  animation:动画名称  动画时间   运动曲线  何时开始   播放次数   是否反方向*/
+            /*动画名称是自定义的   */
+        }
+        /* @keyframes 动画名称 ｛｝  定义动画*/
+        @keyframes go {
+            0% {
+                transform: translate3d(0,0,0);
+            }
+            25% {
+                transform: translate3d(800px,0,0);
+            }
+            50% {
+                transform: translate3d(800px,600px,0);
+            }
+            75% {
+                transform: translate3d(0,600px,0);
+            }
+            100% {
+                   transform: translate3d(0,0,0);
+               }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 200px;
+            position: absolute;
+            left: 500px;
+
+        }
+        li {
+            font-size: 20px;
+            padding-bottom:10px ;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 鼠标经过时，改变当前li的颜色，鼠标点击时，上面的颜色一样  下面的颜色一样,鼠标离开后  恢复
+
+        $(function () {
+            // 获取ul中的li
+            $('#uu>li').mouseenter(function () {
+                $(this).css('backgroundColor','pink').siblings().css('backgroundColor','');
+            }).mouseleave(function () {
+                $(this).css('backgroundColor','').siblings().css('backgroundColor','');
+            }).click(function () {
+                // 当前元素前面的所有兄弟元素的颜色为deeppink
+                $(this).prevAll().css('backgroundColor','deeppink');
+                // 当前元素后面的所有兄弟元素的颜色为hotpink
+                $(this).nextAll().css('backgroundColor','hotpink');
+
+                // 链式编程代码：
+                // 断链：对象调用方法  返回的不是当前对象，再调用方法就调用不了
+                // 解决断链--->恢复到断链之前的一个效果--修复断链
+                // .end();方法恢复到断链之前的效果
+                $(this).prevAll().css('backgroundColor','deeppink').nextAll().css('backgroundColor','hotpink');
+            });  // 此时会出现断链
+        });
+
+
+    </script>
+</head>
+<body>
+<ul id="uu">
+    <li>青岛啤酒（TsingTao）</li>
+    <li>瓦伦丁（Wurenbacher）</li>
+    <li>雪花（SNOW）</li>
+    <li>奥丁格教士（Franziskaner）</li>
+    <li>科罗娜喜力柏龙（Paulaner）</li>
+    <li>嘉士伯Kaiserdom</li>
+    <li>罗斯福（Rochefort）</li>
+    <li>粉象（Delirium）</li>
+    <li>爱士堡（Eichbaum）</li>
+    <li>哈尔滨牌蓝带</li>
+</ul>
+</body>
+</html>

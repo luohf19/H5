@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 构造函数
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        // 多个对象  会存储多个sayHi方法
+        this.sayHi = function () {
+            console.log('大家好，我是' + this.name);
+        }
+    }
+    var s1 = new Student('李磊', 18, '男');
+    var s2 = new Student('郭美美', 18, '女');
+    s1.sayHi();
+    s2.sayHi();
+
+
+
+    // 解决sayHi存储多份的问题
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        // 多个对象  会存储多个sayHi方法
+        this.sayHi = sayHi;
+    }
+    function sayHi() {
+        console.log('大家好，我是' + this.name);
+    }
+    var s1 = new Student('李磊', 18, '男');
+    var s2 = new Student('郭美美', 18, '女');
+    s1.sayHi();
+    s2.sayHi();
+    console.log(s1.sayHi === s2.sayHi);
+
+</script>
+</body>
+</html>

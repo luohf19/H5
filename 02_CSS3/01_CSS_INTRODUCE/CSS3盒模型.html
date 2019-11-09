@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div:first-child {
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+            box-sizing: content-box;       /*  就是以前的盒子模型   W3c    盒子大小为width+padding+border */
+            border: 10px dotted yellow;
+            padding: 10px;
+        }
+        div:last-child {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            box-sizing: border-box;    /* 盒子大小为width   就是说padding和border是包含在width里面的*/
+            padding: 10px;             /*padding    border   都不撑开盒子*/
+            border: 10px blue solid;
+        }
+    </style>
+</head>
+<body>
+<div>沈波的盒子</div>
+<div>罗海芳的盒子</div>
+</body>
+</html>

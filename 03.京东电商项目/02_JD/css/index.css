@@ -1,0 +1,271 @@
+  /*中间分类模块开始*/
+
+  .grid {
+      height: 480px;
+  }
+  .grid_col1 {
+      height: 100%;
+      width: 190px;
+      background-color: #6e6568;
+      font-size: 14px;
+      color: #FFFFFF;  /* 这个颜色是给/  的    不是给字的*/
+      position: relative;
+  }
+  .ad {
+      width: 250px;
+      height: 480px;
+      background-color: #FFFFFF;
+      position: absolute;
+      top: 0;
+      left: -250px;
+  }
+  .ad-r {
+      position: absolute;
+      left: 250px;
+      top: 0;
+      z-index: 999;
+      width: 0;
+      height: 480px;
+      transition: all 0.8s;
+  }
+  .ad:hover .ad-r {
+      width: 990px;  /* 鼠标经过ad这个大盒子时，里面这个叫ad-r的图片宽度由0变为990*/
+  }
+  .grid_col1 a {
+      font-size: 14px;
+      color: #FFFFFF;      /*这个是给链接的*/
+      margin: 0 3px;
+  }
+  .grid_col1 a:hover {
+      color: #f10215;
+  }
+  .grid_col1 ul {
+      padding-top: 10px;
+  }
+  .grid_col1 ul li {
+      padding-left: 12px;
+     /* margin-left: 12px; (不用margin   就是因为鼠标经过的效果)*/
+      height: 29px;
+      line-height:26px;
+  }
+  .grid_col1 ul li:hover {
+      background-color: #9c9698;
+  }
+  .grid_col2 {
+      height: 100%;
+      width: 790px;
+     margin-left: 10px;
+  }
+  .grid_col2   {
+      float: left;
+  }
+     /*banner部分*/
+  .grid_col2_b div {
+      float: left;
+      margin-top: 10px;
+  }
+  .grid_col2_b div:last-child{
+      float: right;
+  }
+  /*箭头部分*/
+  .grid_col2_t {
+      position: relative;
+  }
+  .arrow-l,
+  .arrow-r {
+      width: 30px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 60px;   /*垂直居中*/
+      text-align: center;      /*水平居中*/
+      font-size: 20px;
+      font-weight: normal;
+      color: rgba(255,255,255,0.6);
+      background-color: rgba(0,0,0,0.3);
+  }
+  .arrow-r {
+      right: 0;
+  }
+     /*圆点部分*/
+  .circle {
+      width: 175px;
+      height: 20px;
+      position: absolute;
+      background-color: rgba(255,255,255,0.3);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 20px;
+      border-radius: 10px;
+  }
+  .circle li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #fff;
+      float: left;
+      margin: 4px;
+      cursor: pointer;       /*  鼠标经过变成小手*/
+  }
+  .circle li:first-child {
+      margin-left: 12px;
+  }
+  .circle .current {
+      background-color: #f10215;
+  }
+  .grid_col3 {
+      height: 100%;
+      width: 190px;
+  }
+.login {
+    height: 85px;
+    border: 1px solid #cccccc;
+    background-color: #FFFFFF;
+    padding: 15px;
+}
+  .login-t {
+      width: 95px;
+      height: 60px;
+      font-size: 12px;
+      white-space: nowrap;  /*强制一行显示*/
+      overflow: hidden;  /*溢出部分隐藏*/
+      text-overflow: ellipsis;  /*超出部分显示省略号*/
+      color: #666666;
+      padding-left: 60px; /*这里给padding把文字挤过来*/
+      line-height: 20px;
+      position: relative;
+  }
+  .login-t a {
+      color: #666666;
+  }
+  .login-t a:hover {
+      color: #f10215;
+  }
+  .user-info {
+      width: 50px;
+      height: 50px;position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background: url("../images/sprite_userinfo@1x.png") no-repeat -70px 0;
+  }
+  .user-info img {
+      width: 40px;
+      margin: 5px;
+      border-radius: 50%;
+  }
+  .login-b a {
+      display: inline-block;
+      width: 70px;
+      height: 20px;
+      border: 2px solid #f10215;
+      text-align: center;
+      line-height: 20px;
+      color: #f10215;
+  }
+  .login-b a:hover {
+      background-color: #f10215;
+      color: #FFFFFF;
+  }
+.news {
+    height: 154px;
+    border: 1px solid #cccccc;
+    background-color: #FFFFFF;
+    padding: 7px 13px 0;
+    box-sizing: border-box;    /*将padding值算入盒子内部  这样不会撑大盒子*/
+}
+
+.news-t {
+    height: 19px;
+    border-bottom:1px solid #cccccc;
+    position: relative;
+}
+.news-t a {
+    float: left;
+    height: 17px;
+    line-height: 17px;
+}
+.cuxiao {
+    width: 38px;
+    border-right: 1px solid #cccccc;
+}
+  .news-t .gg {
+    margin-left: 15px;
+}
+  .news-t .more {
+    float: right;
+}
+  .news-t div {
+      width: 28px;
+      height: 2px;
+      background-color: #f10215;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+  }
+  .news-b {
+      padding-top: 15px;
+  }
+  .news-b li {
+      line-height: 23px;
+  }
+.expand {
+    height: 209px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.expand ul {
+    width: 195px;  /*父亲ul宽度是190， 但里面的四个li总宽度超过190  此时可以让ul宽度变大*/
+}
+.expand li {
+    width: 47px;
+    height: 69px;
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    float: left;
+}
+
+ /* .arrow-l,
+  .arrow-r {
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-50%);
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      color: rgba(255, 255, 255, .6);
+      font-family: arial;
+      font-weight: normal;
+  }
+  .arrow-r {
+      right: 0;
+  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

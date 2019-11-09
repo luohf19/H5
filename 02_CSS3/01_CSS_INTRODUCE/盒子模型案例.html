@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;     /*   清空默认的内外边距，几乎是我们css必须要写的*/
+            padding: 0;
+        }
+        div {
+            width: 238px;
+            height: 294px;
+            border: 1px solid #D9E0EE;
+            border-top: 3px solid #ff8400;   /*这句话放在border的下面  样式重叠，就近原则*/
+            margin: 100px;
+        }
+        div h3 {
+            height: 35px;
+            border: 1px solid #D9E0EE ;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 35px;   /*让行高等于高度，可以让文字水平居中*/
+            padding-left: 12px;   /* h3没有设置宽度，所有padding不会影响盒子的大小*/
+        }
+        div img {
+            width: 200px;
+            height: 150px;
+            margin: 7px 0 0 8px;
+        }
+        div ul {
+            list-style: none;           /*取消列表自带的小点  默认的列表样式*/
+            margin-left: 8px;
+        }
+        div ul li a {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+        div ul li {
+            padding-left: 8px;
+            height: 26px;
+            line-height: 26px;
+            background: url("zfx.jpg") no-repeat left center;         /* 背景设置*/
+            background-size: 4px;
+        }
+        div ul li a:hover {
+            text-decoration: underline;    /*添加下划线*/
+            color: #ff8400;
+        }
+    </style>
+</head>
+<body>
+<div>
+   <h3>搜素趣图</h3>
+    <img src="liu.jpg" alt="">
+    <ul>
+        <li><a href="#">量子传输突破：NASA首次用城市网络实现</a></li>
+        <li><a href="#">太空揭秘：遭遇太阳风暴，宇航员怎么办</a></li>
+        <li><a href="#">太空揭秘：遭遇太阳风暴，宇航员怎么办</a></li>
+    </ul>
+</div>
+</body>
+</html>

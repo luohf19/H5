@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // DOM操作按钮  修改背景颜色
+       window.onload =  function () {
+            var btnObj = document.getElementById('btn');
+            btnObj.onclick = function () {
+                this.style.backgroundColor = 'red';
+            }
+
+            // DOM对象转换成jQuery对象  只需要把DOM对象放在$（dom对象）  ---> jQuery对象
+            $(btnObj).click(function () {
+                $(this).css('backgroundColor', 'yellow');
+            });
+
+            // 把jQuery对象转换成DOM对象有两种方法
+            // 1.$(btnObj).get(0);---> DOM对象
+            // 2.$(btnObj)[0];----->DOM对象
+
+            var btnObj = document.getElementById('btn'); // DOM对象
+            var obj = $(btnObj).get(0); // DOM对象
+            obj.onclick = function () {
+                this.style.backgroundColor = 'pink';
+            }
+
+            var btnObj = document.getElementById('btn'); // DOM对象
+            var obj = $(btnObj)[0]; // DOM对象
+            obj.onclick = function () {
+                this.style.backgroundColor = 'pink';
+            }
+
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="效果演示">
+</body>
+</html>

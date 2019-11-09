@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #box {
+            position: relative;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" id="btn" value="动画500" >
+<input type="button" id="btn1" value="动画1000" >
+<div id="box"></div>
+<script>
+    // 1.点击按钮  让盒子能够向右移动
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    var btn1 = document.getElementById('btn1');
+
+    btn.onclick = function () {
+        animate(box, 500);
+    }
+
+    btn1.onclick = function () {
+        animate(box, 1000);
+    }
+    // 封装函数
+    var timerId = null;
+    function animate (element, target) {
+        if(timerId){
+            clearInterval(timerId);  // 清除定时器
+            timerId = null;
+        }
+        // 2.让盒子不停的向右移动
+        timerId = setInterval(function () {
+            // 让盒子停在500的位置
+            // 判断盒子当前的位置是否到达
+            // 最终盒子停止的位置
+            // 步进  每次移动的距离
+            var step = 6;
+            // 盒子当前的位置
+            var current = element.offsetLeft;
+            if (current >= target){
+                // 停止定时器
+                clearInterval(timerId);
+                // 让盒子到target的位置
+                element.style.left = target + 'px';
+                // 退出函数
+                return;
+            }
+            // 移动盒子
+            current += step;
+            element.style.left = current + 'px';
+        }, 30);
+
+    }
+
+</script>
+
+</body>
+</html>

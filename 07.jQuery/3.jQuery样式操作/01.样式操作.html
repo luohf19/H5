@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                // jQuery操作样式    方法一
+                $('#ul>li').css('backgroundColor','red');
+                $('#ul>li').css('fontWeigh','700');
+                $('#ul>li').css('fontSize','30px');
+
+                // jQuery操作样式    方法二
+                var style = {
+                    'backgroundColor':'red',
+                    'fontWeigh':'700',
+                    'fontSize':'30px'
+                }
+                $('#ul>li').css(style);
+
+                // jQuery操作样式    方法二
+                $('#ul>li').css('backgroundColor','red').css('fontWeigh','700').css('fontSize','30px');
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="效果展示" id="btn">
+<ul id="ul">
+    <li>图书馆</li>
+    <li>超级市场</li>
+    <li>交大学校</li>
+    <li>超级学霸</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/*注释 这种注释会出现在css中*/
+// 注释  这个注释出现在less中，不会出现在css中
+
+/*变量 @变量名：值；*/
+@baseColor:#e92322;
+a{
+  color: @color;
+}
+/*混入：可以将一个定义好的样式引入到另一个样式中，类似与函数的调用*/
+/*
+.addRadius {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  !*引入已经写好的圆角样式*!
+  .addRadius;
+}
+*/
+.addRadius(@r) {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  /*引入已经写好的圆角样式*/
+  .addRadius(5px);
+}
+
+/*嵌套 实现选择器的继承，可以减少代码量，同时使用代码结构更加清晰*/
+jd_header {
+  width: 100%;
+  height: 200px;
+  addRadius(5px);
+  >div {
+    &::before{
+      content: "";
+    }
+    width: 100%;
+    >h3{
+      height: 20px;
+    }
+    >a{
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}

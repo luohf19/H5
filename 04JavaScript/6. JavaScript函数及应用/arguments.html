@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      /*  function text(){
+            //我们可以通过arguments 获取函数调用的时候的实参
+            console.log(arguments);  //arguments 非常像数组，但不是数组
+            console.log(1);
+        }
+        text(5, 9, 12);*/
+
+     // 求任意数的最大值
+   function getMax(){
+       var max = arguments[0];
+       for(var i = 1; i <arguments.length; i++){
+           if(max < arguments[i]){
+               max = arguments[i];
+           }
+       }
+       return max;
+   }
+   var max = getMax(45,63,9,24,3,99);
+   console.log(max);
+  //这样做的好处是我们可以给数组中任意添加数子，最后都可以找到最大值
+
+        //求任意个数的和    当我们不确定参数的个数时，可以先不写形参
+     function getSum(){
+         var sum = 0;
+         for(var i = 0; i < arguments.length; i++){
+             sum = sum + arguments[i];
+         }
+        return sum;
+      }
+    var sum = getSum(4,5,6,7,8,9)
+        console.log(sum);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

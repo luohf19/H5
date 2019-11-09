@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</ul>
+<ul id="sel">
+
+</ul>
+<div id="div"></div>
+<script>
+    // appendChild()
+    // 把第一个ul中的第一个li  放到第二个ul中
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+        var li = document.createElement('li');
+        li.innerText = 'abc';
+        var ul = document.getElementById('ul');
+        var sel =document.getElementById('sel');
+        sel.appendChild(ul.children[0]);
+    }
+</script>
+
+
+</body>
+</html>

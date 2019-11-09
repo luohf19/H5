@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /*transition: width 0.3s ease 0s,height 0.3s ease 0s;*/
+            transition: all 0.6s;   /*所有属性都变化，用all就可以了，后面两个属性可以省略*/
+        }
+        div:hover {        /* 鼠标经过盒子  宽度和高度改变*/
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

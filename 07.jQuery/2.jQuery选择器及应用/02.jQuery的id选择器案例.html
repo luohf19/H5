@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 点击按钮，设置层中的显示内容为：这是一个层，同时改变这个层的背景颜色（id选择器）
+        // 页面加载事件
+        $(function () {
+            // 获取按钮  根据id选择器获取  调用点击事件的方法
+            $('#btn').click(function () {
+                // 设置div中的显示内容
+                $('#dv').text('这是一个有颜色的div');  //text()  相当于DOM中的innertext  或者是  textcontent
+                $('#dv').css('backgroundColor', 'deeppink');   // 设置元素的样式
+            })
+        });
+
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+<div id="dv"></div>
+</body>
+</html>

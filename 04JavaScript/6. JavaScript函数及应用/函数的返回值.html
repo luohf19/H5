@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //求一组数的最大值
+        function getMax(arr){
+            var max = arr[0];
+            for(var i = 1; i < arr.length; i++){
+                if(max < arr[i]){
+                    max = arr[i]
+                }
+            }
+            return max;   //函数的返回值
+        }
+        var array = [15,89,54,63,98,75,9];
+        var max =  getMax(array);
+        console.log(max);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

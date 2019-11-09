@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       // 1.栈操作  先进后出
+        var array = [1, 2, 3];
+        array.push(4);  //给数组的最后一项添加元素
+        var r = array.push(5, 6, 7); // 参数可以有多个，都会添加到数组的最后
+        console.log(r);  //返回值就是改变后数组的长度   这个数组的返回值是7
+        console.log(array); //新数组的返回值是 1，2，3，4，5，6，7
+
+        // pop返回数组中的最后一个元素，并且会修改数组的长度
+        var array = [1, 2, 3, 4, 5, 6, 7];
+        var last =array.pop();
+        console.log(array.length);   //打印结果长度是6
+        console.log(last);            // 打印结果是7   表示最后一个值是7
+        console.log(array);            //打印的数组 1，2，3，4，5，6
+
+
+        //2.队列操作2：特点先进先出
+       var array = [1, 2, 3];
+       array.push(4);    //给数组的最后一项添加元素4
+       var first = array.shift();
+       console.log(first); //取出数组中的第一个元素1
+       console.log(array);  // 此时数组的元素是2，3，4
+        array.unshift(0);  //我们把数组最前面插入一个元素0
+        console.log(array); //此时数组的元素有0，2，3，4
+
+
+        //3.排序方法   reverse()作用：翻转数组
+        var array = ['d', 'c',  'b', 'e'];
+        var newArray = array.reverse(); //翻转数组
+        console.log(newArray);    //此时打印数组的结果是e，b,c,d
+        array.sort();       //从小到大排序
+        console.log(array);   //此时打印数组的结果是b,c,d,e
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

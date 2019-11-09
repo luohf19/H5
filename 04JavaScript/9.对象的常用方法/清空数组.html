@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = [1, 2, 3];
+        //清空数组
+        // 方法一  推荐使用
+        arr = [];
+        console.log(arr);
+
+        //方法二
+        arr.length = 0;
+        console.log(arr);
+
+        //方法三     不推荐使用
+        arr.splice(0, arr.length);
+        //  第一个参数，是从什么位置开始删除  索引
+        // 第二个参数，删除多少个元素
+        console.log(arr);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

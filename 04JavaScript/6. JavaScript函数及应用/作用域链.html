@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 域解析
+        // 变量提升：定义变量的时候，变量的声明会被提升到作用域的最上面，变量的赋值不会提升
+        // 函数提升：JavaScript解析器首先会把当前作用域的函数声明提前到整个作用域的最前面，不包括函数调用
+        console.log(num);
+        var num = 5;
+        //预解析之后
+        var num;
+        console.log(num);
+        num = 5;           //所以打印出来的结果就是undefined
+
+
+        fl();
+        function fl() {
+            console.log('hello');
+        }
+        //预解析之后
+        function fl() {    // 将函数声明提前到整个作用域的最前面
+            console.log('hello')
+        }
+        fl();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

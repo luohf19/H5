@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   // 每一个构造函数都有一个属性  原型对象
+   function Student(name, age, sex) {
+       this.name = name;
+       this.age = age;
+       this.sex = sex;
+       }
+   Student.prototype.sayHi = function () {
+       console.log('大家好，我是' + this.name);
+   }
+   var s1 = new Student('李磊', 18, '男');
+   var s2 = new Student('郭美美', 18, '女');
+   s1.sayHi();
+   s2.sayHi();
+   console.log(s1.sayHi === s2.sayHi);
+
+   // 构造函数中有一个属性--prototype  他是一个对象  我们可以通过原型队形来增加一些成员 、
+   // 我么通过这个构造函数创建的所有对象都可以访问原型对象中增加的这些成员
+
+
+</script>
+</body>
+</html>

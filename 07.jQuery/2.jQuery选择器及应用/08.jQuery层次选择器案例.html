@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 页面加载后获取ul中的所有的li
+        $(function () {
+            // 根据层次选择器获取li
+            $('#uu>li').mouseover(function () {
+                $(this).css('backgroundColor','yellow');
+            });
+            $('#uu>li').mouseout(function () {
+                $(this).css('backgroundColor','');
+            });
+        })
+
+        // 页面加载完毕  div中的背景颜色改变为pink
+        $(function () {
+            // 这里的* 代表的是所有   要和id有一个空格
+            $('#dv *').css('backgroundColor','pink');
+        });
+        
+    </script>
+</head>
+<body>
+<div id="dv">
+    <p>这是一个p标签</p>
+    <span>这是一个span标签</span>
+</div>
+<ul id="uu">
+    <li>数学</li>
+    <li>语文</li>
+    <li>英语</li>
+    <li>政治</li>
+    <li>历史</li>
+    <li>物理</li>
+    <li>化学</li>
+</ul>
+</body>
+</html>

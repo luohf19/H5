@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则表达式   方式一
+    // RegExp   内置对象
+    // 有两个参数
+    // 第一个参数是 模式pattern
+    // 第二个参数flag   i忽略大小写    g全局匹配
+
+    var regularExpression = new RegExp('ab[a-z]');// 参数二可以省略
+    var str1 = 'abbs';
+    var str2 = 'abBs';
+
+    console.log(regularExpression.test(str1));  // 返回结果是true
+    console.log(regularExpression.test(str2));  // 返回结果是false
+
+    // 正则表达式   方式二
+    var regularExpression = /ab[a-z]/i;    //第二个参数可以写在外面
+    var str = 'abD';
+    console.log(regularExpression.test(str));
+
+</script>
+</body>
+</html>

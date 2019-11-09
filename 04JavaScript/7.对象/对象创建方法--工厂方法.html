@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //3.工厂方法
+        function createHero(name, weapon, equipment, blood){
+            var hero = new Object();     // 返回一个空的对象
+            // 属性
+            hero.name = name;
+            hero.weapon = weapon;
+            hero.equipment = equipment;
+            hero.blood = blood;
+            // 方法
+            hero.attack = function () {
+                console.log(this.name + ':攻击');
+            }
+            hero.run = function () {
+                console.log(this.name + ':加速跑');
+            }
+        return hero;
+        }
+        var hero1 = createHero('黄忠', '弓箭', ['头盔', '靴子'], 100);
+        var hero2 = createHero('刘备', '剑', ['头盔', '盔甲'], 100);
+        console.log(hero1);
+        console.log(hero2);
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

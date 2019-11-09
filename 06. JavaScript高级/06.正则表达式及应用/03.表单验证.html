@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    QQ号：<input type="text" id="txtQQ"><span></span><br>
+    邮箱：<input type="text" id="txtMail"><span></span><br>
+    手机：<input type="text" id="txtPhone"><span></span><br>
+    生日：<input type="text" id="txtBirthday"><span></span><br>
+    姓名：<input type="text" id="txtName"><span></span><br>
+
+<script>
+    // 把文本框的验证封装成一个函数
+    // 第一个参数是ID
+    // 第二个参数是 正则表达式对象
+    // 第三个参数是 提示的文本
+
+    function addCheck(elementId, reg, tip) {
+        var element = document.getElementById(elementId)
+        element.onblur = function () {
+            var span = this.nextElementSibling;
+            if (!reg.test(this.value) ) {
+                span.innerText = tip;
+                span.style.color = 'red';
+            } else {
+                span.innerText = '';
+                span.style.color = '';
+            }
+        }
+    }
+
+
+
+    var txtQQ = document.getElementById('txtQQ');
+    // 当光标离开文本框的时候
+    txtQQ.onblur = function () {
+        // 验证用户输入的是否是QQ号
+        var reg = /^\d{5,12}$/;
+        var span = this.nextElementSibling;
+        // nextElementSibling 返回当前元素在其父元素的子元素节点中的后一个元素节点,
+        // 如果该元素已经是最后一个元素节点,则返回null,该属性是只读的
+
+        // 检测用户输入的文本是否匹配指定的模式（正则表达式）
+        if (!reg.test(this.value)) {
+            // 不匹配  在文本框后面的span中进行相应的提示
+            span.innerText = '请输入正确的QQ格式';
+            span.style.color = 'red';
+        } else {
+            // 匹配
+            span.innerText = '';
+            span.color = '';
+
+        }
+    }
+
+    // 验证邮箱
+    var txtMail = document.getElementById('txtMail');
+    // 当光标离开文本框的时候
+    txtMail.onblur = function () {  // sdjs@sfad.com
+        var reg = /^\w+@\w+(\.\w+)+$/;
+        var span = this.nextElementSibling;
+        if (!reg.test(this.value)) {
+            span.innerText = '请输入正确的电子邮箱格式';
+            span.style.color = 'red';
+        } else {
+            span.innerText = '';
+            span.style.color = '';
+        }
+    }
+
+</script>
+</body>
+</html>

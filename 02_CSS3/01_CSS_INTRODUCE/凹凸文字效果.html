@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+        div {
+            color:#cccccc;
+            font: 700 60px "微软雅黑";
+        }
+        div:first-child {         /*text-shadow: 水平位置  垂直位置  模糊距离  阴影颜色;*/
+            text-shadow:-1px -1px 1px black,1px 1px 1px white ;
+        }
+        div:last-child {
+            text-shadow: 1px 1px 1px black,-1px -1px 1px white;
+        }
+    </style>
+</head>
+<body>
+<div>我是凹进去的文字</div>
+<div>我是凸出来的文字</div>
+</body>
+</html>

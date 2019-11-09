@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 构造函数  原型对象  实例/对象  三者之间的关系
+    // 每一个构造函数  都有一个原型对象prototype
+    // 对象是由构造函数创建的
+    // 每个对象里都有一个__proto__属性   和构造函数中的prototype的指向是相同的
+    // 原型对象中有一个属性constructor  他就指记录了创建该对象的构造函数
+
+    function Student(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    Student.prototype.sayHi = function () {    // 这是原型中的一个方法
+        console.log('大家好，我是' + this.name);
+    }
+    var s1 = new Student('李磊', 18, '男');
+    var s2 = new Student('郭美美', 18, '女');
+
+</script>
+</body>
+</html>

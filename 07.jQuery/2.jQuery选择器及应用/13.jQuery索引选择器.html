@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            width: 200px;
+            position: absolute;
+            left: 500px;
+        }
+        ul li {
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 索引选择器
+        $(function () {
+            $('#btn').click(function () {
+                // eq(3)  获取索引是3对应的元素
+                $('#uu>li:eq(3)').css('backgroundColor','red');
+                // gt(3)  获取索引大于3的所有元素
+                $('#uu>li:gt(3)').css('backgroundColor','pink');
+                // lt(3)  获取索引小于3的所有元素
+                $('#uu>li:lt(3)').css('backgroundColor','skyblue');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<input type="button" value="隔行变色" id="btn">
+<ul id="uu">
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+    <li>你好，明天</li>
+</ul>
+</body>
+</html>

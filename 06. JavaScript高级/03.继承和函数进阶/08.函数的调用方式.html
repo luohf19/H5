@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        // 1.普通函数调用
+    function fn() {
+    }
+    fn();
+        // 2.方法调用
+    var obj = {
+        fn: function () {
+        }
+    }
+    obj.fn();
+
+        // 3.作为构造函数调用
+
+        // 4.作为事件的处理函数
+    btn.onclick = function(){
+        console.log(this);
+    }
+        // 5.作为定时器的参数
+    setInterval(function () {
+
+    }, 1000);
+
+
+</script>
+</body>
+</html>

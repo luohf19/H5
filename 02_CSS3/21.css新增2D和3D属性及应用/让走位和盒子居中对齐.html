@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*transform: translate(100px);    水平移动100像素*/
+           /* transform: translate(50%);   transform移动距离，   如果是%   不是以父亲宽度为准，是以自己的宽度为准*/
+                    /*以前我们定位盒子居中对齐*/
+            position: absolute;
+            top: 50%;
+            left: 50%;        /*  先走整个页面宽度的一半，然后往回走自己宽度的一半*/
+          /*  margin-left: -100px;*/    /*但是要计算，不方便*/
+            transform: translate(-50%,-50%); /*  垂直水平居中*/
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

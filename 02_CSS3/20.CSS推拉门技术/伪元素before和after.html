@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*    类选择器  .one
+            伪类选择器  :hover
+            伪元素选择器  ::before*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div::before {
+            content: "沈波";
+            background-color: skyblue;
+            border: 1px solid red;
+            font-size: 40px;
+            margin: 20px;
+           /* 类选择器   伪类选择器就是选区对象
+            伪元素选择器   本质上是插入一个元素（标签   盒子）   只不过是行内元素*/
+        }
+        div::after {
+            content:"罗海芳的";
+            background-color: deeppink;
+            border: 1px solid blue;
+            font-size: 40px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div>是</div>
+</body>
+</html>

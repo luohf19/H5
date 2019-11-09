@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+/*
+             //前置++
+       var num = 5;
+        console.log(++num);   //++num  是一个表达式   先让num自身+1   然后再返回表达式的结果
+        var num1 = 7;
+        console.log(num+ ++num1)    //此时的num是6   ++num1是8   相加结果是14
+*/
+             //后置++
+        var num = 5;
+         //num++  是一个表达式  先返回表达式的结果，然后再对num自身+1
+        console.log(num++);
+        console.log(num);
+
+        var num1 = 7;
+        console.log(num + num1++) //此时num是6 num1++是7   所有6+7=13
+        console.log(num1)   // 而此时的num1是8
+    </script>
+</head>
+<body>
+
+</body>
+</html>

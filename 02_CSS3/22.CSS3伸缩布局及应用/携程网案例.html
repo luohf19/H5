@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;    /*取消小点*/
+        }
+        body {
+            min-width: 320px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        header {
+            width: 100%;    /*  继承父盒子body 的宽度  540 */
+            height: 100px;
+        }
+        header img {
+            width: 100%;         /*继承父盒子header  的宽度*/
+            height: 100%;
+        }
+        nav {
+            padding: 0 5px;
+        }
+        .row {
+            width: 100%;
+            height: 100px;
+            background-color: #ff697a;
+            border-radius: 8px;
+            display: flex;       /* 伸缩布局    父亲添加*/
+            margin-bottom: 5px;
+        }
+
+        nav .row:nth-child(2) {
+            background-color: #3d98ff;
+        }
+        .row3 {
+            flex: 1;         /* 子盒子填写份数*/
+            border-left: 1px solid #FFFFFF;
+        }
+        .row3:nth-child(1) {
+            border: 0px;
+        }
+        .hotel {
+            display: flex;
+            flex-direction: column;     /*垂直排列*/
+        }
+        .hotel a {
+            flex: 1;
+            text-decoration: none;    /*取消下划线*/
+            text-align: center;      /*文字水平居中*/
+            line-height: 45px;
+            color: #FFF;
+           text-shadow: 0 1px 2px rgba(0,0,0,0.3);        /*文字阴影   水平位置   垂直位置  模糊距离  阴影颜色   */
+        }
+        .hotel a:nth-child(1) {
+            border-bottom: 1px solid #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="ctrip.jpg" width="768px" alt="">
+    <nav>
+        <div class="row">
+            <div class="row3"></div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row3"></div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row3"></div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+            <div class="row3 hotel" >
+                <a href="#">海外酒店</a>
+                <a href="#">特价酒店</a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+</body>
+</html>

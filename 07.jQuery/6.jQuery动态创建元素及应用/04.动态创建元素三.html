@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-1.12.2.js"></script>
+    <script>
+        // 需求：点击按钮把一个p标签添加到一个div中
+        $(function () {
+            $('#btn').click(function () {
+                // .html()  方法也可以添加一个元素添加到另一个元素
+                $('#dv').html('<p>这是一个p标签</p>');
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="创建元素" id="btn">
+<div id="dv"></div>
+
+</body>
+</html>

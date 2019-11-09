@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+          //对数组进行排序，从小到大-----冒泡排序
+        function sort(array){
+            //外层循环，控制趟数
+            for(var i = 0;i < array.length; i++){
+                var isSort = true;  //假设排序ok
+                //内层循环，控制两两比较
+                for(var j = 0; j < array.length-1-i; j++){
+                    if(array[j] > array[j + 1]){
+                     var isSort = false;   //假设没排好序
+                    var tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                    }
+                }
+                if(isSort){
+                    break;
+                }
+            }
+           return array;
+        }
+        var arr = [20, 89, 65, 3, 51,18];
+        console.log(sort(arr));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

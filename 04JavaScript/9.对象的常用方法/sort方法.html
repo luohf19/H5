@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // sort 从小到大排序
+        var array = [25, 89, 96, 26, 73];//默认情况下的sort是对字符编码  进行从小到大的排序
+        console.log(array);  //结果是没有变化的
+
+        // 对数字进行排序   我们需要一个compare 函数来协助
+      /*  function compare(a, b){
+            return a - b;
+        }
+        array.sort(compare);*/
+      // 简化也可以这样写
+        array.sort(function (a, b){
+            return a - b;  //如果想从大到小排序  只需要将这里换成b-a就可以了
+        })
+        console.log(array);  //此时打印的结果就是从小到大的顺序  25，26，73，89，96
+
+        //我们根据字符串的长短进行排序
+        var arr = ['ab', 'akka', 'bvc', 'x'];
+        arr.sort(function (a, b) {
+            return a.length - b.length;  //这里可以直接比较字符串的长度
+        })
+        console.log(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

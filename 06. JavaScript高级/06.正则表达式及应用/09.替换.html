@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // replace()  替换
+    // 1.替换所有空格
+    var str = '   dsa12   adfas22   AHjss2  fkljv   ';
+    // trim()  去除的是前后的空格
+    // console.log(str.trim());
+
+    // 方式一
+    //console.log(str.replace(/\s/g, ''));
+    // 方式二
+    console.log(str.split(' ').join(''));
+    // join()方法将数组中所有元素连接为一个字符串。这个方法的算法和
+
+    // 2.把所有的，和,  替换为.
+    var str = 'abd,sdv，dsv，dvk,45c,s4，';
+
+    console.log(str.replace(/,|，/g, '.'));
+
+
+</script>
+</body>
+</html>

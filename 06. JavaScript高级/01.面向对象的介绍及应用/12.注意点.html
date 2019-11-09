@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  Student(name, age) {
+        // 一般情况下  对象的属性在构造函数中来设置
+        this.name = name;
+        this.age = age;
+    }
+    // 一般情况下对象的方法在构造函数的原型对象中来设置
+   /* Student.prototype.sayHi = function () {
+        console.log('sayHi');
+    }
+    Student.prototype.eat = function () {
+        console.log('eat');
+    }*/
+
+   // 可以重新改变原型对象的prototype属性，设置一个新的对象
+    // 1. 当我们改变构造函数的prototype的时候，需要重新设置constructor属性
+   Student.prototype = {
+       constructor: Student,
+       sayHi: function () {
+           console.log('sayHi');
+       },
+       eat: function () {
+           console.log('eat');
+       }
+   }
+
+   var s1 = new Student('zs', 18);
+   // 使用对象访问原型对象中的constructor   是创建对象所使用的构造函数
+   console.log(s1.constructor);  // 打印结果ƒ Object() { [native code] }
+
+    // 2.先去设置原型属性  再创建对象  才可以访问原型对象中的成员
+
+
+
+</script>
+</body>
+</html>
